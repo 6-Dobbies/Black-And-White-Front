@@ -13,9 +13,14 @@ const routes = [
     component: () => import('../views/About.vue')
   },
   {
-    path: '/mypage',
+    path: '/myPageInfo',
     name: 'MyPage',
     component: () => import('../views/MyPage.vue')
+  }, 
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
   }, 
   { 
     path: '/board',
