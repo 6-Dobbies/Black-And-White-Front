@@ -5,9 +5,7 @@
     <h1 style="color: #dee2e6">자유 게시판</h1>
     <hr class="bawline" style="height: 5px;">
   </div>
-  <div>
-    <BoardWrite post="글글글"/>
-  </div>
+  <BoardDetail/>
 </template>
 
 

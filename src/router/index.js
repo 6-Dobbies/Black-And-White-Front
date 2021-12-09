@@ -31,6 +31,11 @@ const routes = [
     path: '/boardwrite',
     name: 'BoardWriter',
     component: () => import('../views/BoardWriter.vue')
+  },
+  {
+    path: '/boarddetail',
+    name: 'BoardDetail',
+    component: () => import('../views/BoardClick.vue')
   }
 ]
 

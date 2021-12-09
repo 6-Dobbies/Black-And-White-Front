@@ -7,10 +7,7 @@
       <div class="bs-docs-section clearfix">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header">
-              <h1 id="navbars">Dobby is free</h1>
-            </div>
-
+            
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
             <a class="navbar-brand" href="#">6Dobbies</a>
