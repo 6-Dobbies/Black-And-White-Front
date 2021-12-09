@@ -3,7 +3,7 @@
     <h1>{{name}}님, 환영합니다💜</h1>
     <MyPageInfo msg="메세지???"/>
   </div> -->
-  <MyPageInfo />
+  <MyPageInfo msg="메세지???"/>
 
 </template>
 
