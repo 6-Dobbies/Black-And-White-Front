@@ -11,9 +11,10 @@
         <div class="form-group">
             <label for="exampleTextarea" class="col-form-label mt-4">Content</label>
             <textarea 
-                class="form-control"
-                placeholder="내용을 입력하세요"
-                id="exampleTextarea"
+                type="text" 
+                class="form-control" 
+                placeholder="내용을 입력하세요" 
+                id="exampleTextarea" 
                 rows="10">
             </textarea>
         </div>
