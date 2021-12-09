@@ -1,101 +1,81 @@
 <template>
     <div class="footer">
-    <!-- footer start -->
-    <footer class="bg-dark text-light py-5 mt-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-3">
-                            <h3>Wanna Chess?</h3>
-                            <small class="d-block text-muted">© 2021-2022</small>
-                            <small class="text-muted">All Rights Reserved.</small>
-                        </div>
-                        <!--end of col-->
-                        <div class="col-12 col-md-9">
-                            
-                            <div class="row no-gutters">
-                                <div class="col-6 col-lg-3">
-                                     <h5>Features</h5>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="#" class="text-muted">Ready to ship</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Light weight</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted"> Responsive</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Inner Pages</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!--end of col-->
-                                <div class="col-6 col-lg-3">
-                                    <h5>Resources</h5>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="#" class="text-muted">Angular</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Java</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Camunda API</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Postman</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!--end of col-->
-                                <div class="col-6 col-lg-3">
-                                     <h5>Help</h5>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="#" class="text-muted">Forum</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">FAQ</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Projects</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Site map</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!--end of col-->
-                                <div class="col-6 col-lg-3">
-                                    <h5>About</h5>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="#" class="text-muted">Team</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Privact</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Terms</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-muted">Investment</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!--end of col-->
-                            </div>
-                            <!--end of row-->
-                        </div>
-                        <!--end of col-->
+        <footer class="bg-dark text-light" style="height: 200px; padding-top: 30px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+                        <h3>Wanna Chess?</h3>
+                        <small class="d-block text-muted">© 2021-2022</small>
+                        <small class="text-muted">All Rights Reserved By 6Dobbies</small>
                     </div>
-                    <!--end of row-->
+
+                    <div class="col-12 col-md-9">
+                        <div class="row no-gutters">
+                            <div class="col-6 col-lg-3">
+                                <h5>Back End</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-success">Spring Boot</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-danger">Java</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-black">Flask</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <h5>Front End</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-success">Vue</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-info">CSS</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-orange">HTML</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-warning">JavaScript</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <h5>Model</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-info">python</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-orange">TensorFlow </span></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <h5>Others</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-info">openCV</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-orange">MySQL</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-muted"><span class="badge bg-light">Google Cloud</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!--end of container-->
-            </footer>
+            </div>
+        </footer>
     </div>
-    
 </template>
 
 <script>
@@ -106,10 +86,8 @@ export default {
 
 <style>
 .footer{
-    width: 100%;
-    height: 1px; /* footer의 높이 */
-    position: absolute;  
     bottom: 0;
-    left: 0;
+    width: 100%;
+    position: absolute;
 }
 </style>

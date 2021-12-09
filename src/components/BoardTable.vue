@@ -1,5 +1,5 @@
 <template>
-    <div class="bawbody">
+    <div style="width: 100%">
         <table class="table table-hover">
             <thead>
                 <tr class="table-primary">
