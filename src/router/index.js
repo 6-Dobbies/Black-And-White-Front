@@ -16,6 +16,16 @@ const routes = [
     path: '/mypage',
     name: 'MyPage',
     component: () => import('../views/MyPage.vue')
+  }, 
+  { 
+    path: '/board',
+    name: 'Board',
+    component: () => import('../views/Board.vue')
+  },
+  {
+    path: '/boardwrite',
+    name: 'BoardWriter',
+    component: () => import('../views/BoardWriter.vue')
   }
 ]
 

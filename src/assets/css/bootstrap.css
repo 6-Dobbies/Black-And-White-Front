@@ -2115,6 +2115,8 @@ progress {
   margin-bottom: 0;
   font-size: inherit;
   line-height: 1.5;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .col-form-label-lg {
@@ -11829,7 +11831,6 @@ legend {
 .tooltip .arrow {
   box-shadow: 0 0 2rem rgba(125, 85, 199, 0.4), 0 0 8rem rgba(125, 85, 199, 0.3);
 }
-/* 
 .modal,
 .popover,
 .toast {
@@ -11976,4 +11977,8 @@ legend {
 .card .h5,
 .card .h6 {
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.6), 0 0 3px rgba(255, 255, 255, 0.5), 0 0 0.5rem rgba(255, 255, 255, 0.3), 0 0 2rem rgba(255, 255, 255, 0.2);
+<<<<<<< HEAD
 } */
+=======
+}
+>>>>>>> 01518aef721d0db830d0be5060c69eb43fd9fe96
