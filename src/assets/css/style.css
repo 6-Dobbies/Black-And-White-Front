@@ -23,13 +23,16 @@
     margin-left: auto;
     margin-bottom: 100px;
     color: #3cf281;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bawline {
     border: 0;
     height: 5px;
     background: white;
-    width:100%;
+    width: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -82,4 +85,10 @@
     padding: 0;
     overflow: hidden;
     border: 0;
+}
+
+.bawrowcenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
