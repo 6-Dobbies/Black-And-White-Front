@@ -1,6 +1,6 @@
 <template>
     <div class="bawbody">
-        <table class="table table-hover">
+        <table class="table table-hover">           
             <thead>
                 <tr class="table-primary">
                     <th scope="col">번호</th>
@@ -12,12 +12,21 @@
             </thead>
             <tbody>
                 <tr class="table-danger">
-                    <th scope="row">1</th>
-                    <td><router-link to="/boarddetail">공지용</router-link></td>
+                    <th scope="row">1</th>                    
+                    <td><router-link to="/boarddetail">공지용</router-link></td> 
                     <td>user</td>
                     <td>2021-12-01</td>
                     <td>-</td>
                 </tr>
+
+                <!-- <tr class="table-danger" v-for="(value, index) in data" :key="index">
+                    <th scope="row">{{value.index}}</th>
+                    <td>{{value.title}}</td>
+                    <td>{{value.user}}</td>
+                    <td>{{value.created}}</td>
+                    <td>{{value.modified}}</td>
+                </tr> -->
+
                 <tr class="table-dark">
                     <th scope="row">6</th>
                     <td>title</td>
@@ -127,4 +136,16 @@
             msg: String
         }
     }
+
+// import data from '@/data'
+
+//     export default{
+//         name: 'BoardTable',
+//         date(){
+//             return{
+//                 date: data
+//             }
+//         }
+//     }
 </script>
+
