@@ -13,6 +13,41 @@
             <tbody>
                 <tr class="table-danger">
                     <th scope="row">1</th>
+                    <td>공지용</td>
+                    <td>user</td>
+                    <td>2021-12-01</td>
+                    <td>-</td>
+                </tr>
+                <tr class="table-dark">
+                    <th scope="row">6</th>
+                    <td>title</td>
+                    <td>user</td>
+                    <td>2021-12-01</td>
+                    <td>-</td>
+                </tr>
+                <tr class="table-dark">
+                    <th scope="row">6</th>
+                    <td>title</td>
+                    <td>user</td>
+                    <td>2021-12-01</td>
+                    <td>-</td>
+                </tr>
+                <tr class="table-dark">
+                    <th scope="row">6</th>
+                    <td>title</td>
+                    <td>user</td>
+                    <td>2021-12-01</td>
+                    <td>-</td>
+                </tr>
+                <tr class="table-dark">
+                    <th scope="row">6</th>
+                    <td>title</td>
+                    <td>user</td>
+                    <td>2021-12-01</td>
+                    <td>-</td>
+                </tr>
+                <tr class="table-dark">
+                    <th scope="row">6</th>
                     <td>title</td>
                     <td>user</td>
                     <td>2021-12-01</td>
@@ -20,7 +55,7 @@
                 </tr>
                 <tr class="table-active">
                     <th scope="row">2</th>
-                    <td>title</td>
+                    <td>일반용</td>
                     <td>user</td>
                     <td>2021-12-01</td>
                     <td>-</td>
@@ -81,7 +116,7 @@
                 </li>
             </ul>
         </div>
-        <button type="button" class="btn btn-secondary"><router-link to="/boardwrite">글쓰기</router-link></button>
+        <router-link to="/boardwrite"><button type="button" class="btn btn-secondary">글쓰기</button></router-link>
     </div>
 </template>
 
