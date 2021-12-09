@@ -13,7 +13,7 @@
             <tbody>
                 <tr class="table-danger">
                     <th scope="row">1</th>
-                    <td>공지용</td>
+                    <td><router-link to="/boarddetail">공지용</router-link></td>
                     <td>user</td>
                     <td>2021-12-01</td>
                     <td>-</td>
