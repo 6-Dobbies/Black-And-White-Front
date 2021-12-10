@@ -1,5 +1,6 @@
 <template>
   <Header/>
+  <button @click="getData">테스트</button>
   <Footer/>
   <router-view/>
 </template>
@@ -7,12 +8,24 @@
 <script>
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
+import axios from 'axios';
 
 export default {
   name: "App",
   components: {
     Header,
     Footer
+  },
+  methods: {
+    getData() {
+      axios.get('http://localhost:80/members/all')
+      .then(res => {
+        console.log(res)
+        // const data = res.data
+        // this.products = data
+      })
+      .catch(error => console.log(error))
+    }
   },
 };
 </script>
