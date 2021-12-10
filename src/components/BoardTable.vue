@@ -10,23 +10,21 @@
                     <th scope="col">수정일</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="table-danger">
+            <tbody>                
+                <tr class="table-danger" v-for="(value, index) in data" :key="index">                    
+                    <th scope="row">{{value.index}}</th>                    
+                    <td>{{value.title}}</td>                    
+                    <td>{{value.user}}</td>                    
+                    <td>{{value.created}}</td>                    
+                    <td>{{value.modified}}</td>
+                </tr>
+                <!-- <tr class="table-danger">
                     <th scope="row">1</th>                    
                     <td><router-link to="/boarddetail">공지용</router-link></td> 
                     <td>user</td>
                     <td>2021-12-01</td>
                     <td>-</td>
                 </tr>
-
-                <!-- <tr class="table-danger" v-for="(value, index) in data" :key="index">
-                    <th scope="row">{{value.index}}</th>
-                    <td>{{value.title}}</td>
-                    <td>{{value.user}}</td>
-                    <td>{{value.created}}</td>
-                    <td>{{value.modified}}</td>
-                </tr> -->
-
                 <tr class="table-dark">
                     <th scope="row">6</th>
                     <td>title</td>
@@ -96,11 +94,11 @@
                     <td>user</td>
                     <td>2021-12-01</td>
                     <td>-</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
 
-        <div class="bawpagination">
+        <div class="bawpagination">        
             <ul class="pagination">
                 <li class="page-item disabled">
                     <a class="page-link" href="#">&laquo;</a>
@@ -130,22 +128,22 @@
 </template>
 
 <script>
-    export default {
-        name: 'BoardTable',
-        props: {
-            msg: String
+
+// export default {
+//     name: 'BoardTable',
+//     props: {
+//         msg: String
+//     }
+
+import data from '@/data'
+
+export default {
+    name: 'BoardTable',
+    data(){
+        return{
+            data: data
         }
     }
-
-// import data from '@/data'
-
-//     export default{
-//         name: 'BoardTable',
-//         date(){
-//             return{
-//                 date: data
-//             }
-//         }
-//     }
+}
+    
 </script>
-
