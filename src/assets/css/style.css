@@ -12,6 +12,10 @@
     margin-left: auto;
     margin-top: 60px;
     color: #44d9e8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .bawbody {
