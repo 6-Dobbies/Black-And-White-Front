@@ -1,5 +1,5 @@
 <template>
-  <Header/>
+  <!-- <Header/> -->
   <div id="nav" style="color: #3cf281">
     
     <router-link to="/">Home</router-link> |
@@ -8,19 +8,19 @@
     <router-link to="/myPageInfo">회원가입</router-link> |
     <router-link to="/login">로그인</router-link> |
   </div>
-  <Footer/>
+  <!-- <Footer/> -->
   <router-view/>
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
+// import Header from './components/Header.vue';
+// import Footer from './components/Footer.vue';
 
 export default {
   name: "App",
   components: {
-    Header,
-    Footer
+    // Header,
+    // Footer
   },
 };
 </script>
