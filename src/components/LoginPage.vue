@@ -1,4 +1,5 @@
 <template>
+<div class="bawbody">
   <form class="container h-100">
     <fieldset>
     <legend>BlackandWhite</legend>
@@ -32,9 +33,10 @@
             <button type="button" class="btn btn-primary">회원가입</button>
           </div>
         </div>
-      </div>  
+      </div>
     </fieldset>
   </form>
+</div>
 </template>
 
 <script>
@@ -42,29 +44,3 @@ export default {
   name : 'LoginPage',
 }
 </script>
-
-<style>
-
-html,
-body {
-  height: 100%
-  
-}
-
-div {
-  margin-bottom: 5px;
-}
-
-.container {
-    justify-content: center;
-    width: 500px;
-  margin-left: auto;
-  margin-right: auto;   
-  /* border:1px solid black; */
-
-}
-
-legend {
-  text-align:center
-}
-</style>

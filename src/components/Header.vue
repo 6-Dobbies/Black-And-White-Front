@@ -1,51 +1,41 @@
 <template>
   <header>
- 
-
-    <!-- Navbar
-      ================================================== -->
       <div class="bs-docs-section clearfix">
         <div class="row">
           <div class="col-lg-12">
-            
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#">6Dobbies</a>
+            <router-link to="/" style="text-decoration: none;"><a class="navbar-brand">Black And White</a></router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                <a class="nav-link active" href="#">Home
-                    <span class="visually-hidden">(current)</span>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-                </li>
+                <router-link to="/" style="text-decoration: none;">
+                  <li class="nav-item"><a class="nav-link active">Home<span class="visually-hidden">(current)</span></a></li>
+                </router-link>
+
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Board</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
+                  <router-link to="/board" style="text-decoration: none;"><a class="dropdown-item">자유 게시판</a></router-link>
+                  <router-link to="/board" style="text-decoration: none;"><a class="dropdown-item">공략 게시판</a></router-link>
+                </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item">♟ Chess</a>
+                  <a class="dropdown-item">🃏 Card</a>
                 </div>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <router-link to="/login"><button type="button" class="btn btn-secondary">로그인</button></router-link>
+                <router-link to="/myPageInfo"><button type="button" class="btn btn-secondary">회원가입</button></router-link>
+              </div>
             </div>
             </div>
             </nav>
@@ -61,3 +51,9 @@ export default {
   
 };
 </script>
+
+<style>
+#a {
+  text-decoration: none;
+}
+</style>

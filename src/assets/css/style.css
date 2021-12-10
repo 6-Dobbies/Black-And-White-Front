@@ -8,24 +8,29 @@
 
 .bawhead {
     width: 70%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
-    color: #3cf281;
+    margin-top: 60px;
+    color: #44d9e8;
 }
 
 .bawbody {
     width: 70%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
+    min-height: 100%;
+    padding-bottom: 200px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 100px;
-    color: #3cf281;
+    color: #44d9e8;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.bawrowcenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bawline {
@@ -85,10 +90,4 @@
     padding: 0;
     overflow: hidden;
     border: 0;
-}
-
-.bawrowcenter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
