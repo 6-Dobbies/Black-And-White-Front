@@ -1,4 +1,5 @@
 <template>
+<div class="bawbody">
   <form class="container h-100">
     <fieldset>
     <legend>BlackandWhite</legend>
@@ -32,9 +33,10 @@
             <button type="button" class="btn btn-primary">회원가입</button>
           </div>
         </div>
-      </div>  
+      </div>
     </fieldset>
   </form>
+</div>
 </template>
 
 <script>
