@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import BoardDetail from '@/components/BoardDetail'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/boarddetail',
     name: 'BoardDetail',
     component: () => import('../views/BoardClick.vue')
+  },
+  {
+    path: '/detail/:valueIndex',
+    name: 'Detail',
+    component: BoardDetail
   }
 ]
 

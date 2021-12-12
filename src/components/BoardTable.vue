@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody>                
-                <tr class="table-danger" v-for="(value, index) in data" :key="index">                    
+                <tr class="table-dark" v-for="(value, index) in data" @click="detail(index)" :key="index">                    
                     <th scope="row">{{value.index}}</th>                    
                     <td>{{value.title}}</td>                    
                     <td>{{value.user}}</td>                    
@@ -123,7 +123,8 @@
                 </li>
             </ul>
         </div>
-        <router-link to="/boardwrite"><button type="button" class="btn btn-secondary">글쓰기</button></router-link>
+        <!-- <router-link to="/boardwrite"><button type="button" class="btn btn-secondary">글쓰기</button></router-link> -->
+        <button @click="write" class="btn btn-secondary">글쓰기</button>
     </div>
 </template>
 
@@ -142,6 +143,21 @@ export default {
     data(){
         return{
             data: data
+        }
+    },
+    methods: {
+        write(){
+            this.$router.push({
+                path: 'boardwrite'
+            })
+        },
+        detail(index){
+            this.$router.push({
+                name: 'BoardDetail',
+                params: {
+                    valueIndex: index
+                }
+            })
         }
     }
 }
