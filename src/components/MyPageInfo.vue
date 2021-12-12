@@ -2,9 +2,9 @@
 
 <div class="bawbody">
   <!-- <form name="해당 폼의 이름" action="값을 보낼 주소" method="post 방식인지 get 방식인지"> -->
-  <form class="container h-100">
+  <form class="mpcontainer h-100">
     <fieldset>
-      <legend>blackandwhite</legend>
+      <legend><h1>BLACK AND WHITE</h1></legend>
       <div class="form-group row">
         <label for="inputDefault" class="form-label mt-4">이름</label>
         <input type="text" class="form-control" placeholder="이름을 입력해주세요." id="inputDefault">  
@@ -24,19 +24,20 @@
         <label for="inputDefault" class="form-label mt-4">비밀번호</label>
         <input type="text" class="form-control" id="inputDefault" placeholder="비밀번호를 입력해주세요.">
       </div>
+
       <div class="form-group row">
         <label for="inputDefault" class="form-label mt-4">비밀번호 확인</label>
         <input type="text" class="form-control" id="inputDefault" placeholder="비밀번호를 입력해주세요.">
       </div>
 
       <div class="form-group row">
-        <label for="exampleSelect1" class="col-sm-4 col-form-label">비밀번호 찾기 질문</label>
+        <label for="exampleSelect1" class="form-label mt-4">비밀번호 찾기 질문</label>
           <select class="form-select" id="exampleSelect1">
-            <option></option>
+            <option>선택</option>
             <option>태어난 도시는 어디인가요?</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>가장 기억에 남는 장소는 어디인가요?</option>
+            <option>가장 감명 깊게 읽은 책은 무엇인가요?</option>
+            <option>가장 행복했던 순간은 언제인가요?</option>
           </select>
       </div>
 
@@ -46,7 +47,7 @@
       </div>
 
       <div class="form-group row">
-        <label for="staticEmail" class="form-label mt-4l">성별</label>
+        <label for="staticEmail" class="form-label mt-4">성별</label>
           <select class="form-select" id="staticEmail">
             <option>성별</option>
             <option>남자</option>
@@ -62,17 +63,17 @@
       <div class="form-group row">
         <label for="staticEmail" class="form-label mt-4">지역</label>
         <select class="form-select" id="staticEmail">
-          <option></option>
+          <option>시</option>
           <option>서울</option>
           <option>부산</option>
         </select>
       </div>
      
-      <div class="d-grid gap-2">
+      <div class="d-grid gap-2" style="padding-top: 70px;">
         <button class="btn btn-lg btn-primary" type="button">가입하기</button>
       </div>
     </fieldset>  
-  </form> 
+  </form>
 
 </div>
 
@@ -89,17 +90,21 @@ export default {
 
 <style>
 
-div {
+.mpdiv {
   margin-bottom: 10px;
 }
 
-.container {
+.mpcontainer {
     /* justify-content: center; */
     width: 500px;
 }
 
 legend {
   text-align: center;
+}
+
+label {
+  padding-top: 10px;
 }
 
 </style>
