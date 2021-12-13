@@ -6,7 +6,7 @@
     <router-link to="/"><legend>Black And White</legend></router-link>
   </div>
   <!-- <form @submit.prevent="formSubmit" action="" class="container h-100" method="post"> -->
-  <form class="container h-100">
+  <form class="mpcontainer h-100">
     <fieldset> 
       <div class="form-group row">
         <label for="userName" class="form-label mt-4">이름</label>
@@ -43,9 +43,9 @@
           <select class="form-select" id="exampleSelect1" required>
             <option>질문</option>
             <option>태어난 도시는 어디인가요?</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>가장 기억에 남는 장소는 어디인가요?</option>
+            <option>가장 감명 깊게 읽은 책은 무엇인가요?</option>
+            <option>가장 행복했던 순간은 언제인가요?</option>
           </select>
       </div>
 
@@ -80,11 +80,12 @@
         </select>
       </div>
      
-      <div class="d-grid gap-2 mt-5">
-        <button class="btn btn-lg btn-primary" type="submit">가입하기</button>
+      <div class="d-grid gap-2 mt-5" style="padding-top: 70px;">
+        <button class="btn btn-lg btn-primary" type="button">가입하기</button>
       </div>
     </fieldset>  
-  </form> 
+  </form>
+
 </div>
 
 </template>
@@ -161,7 +162,12 @@ export default {
 
 <style>
 
-.container {
+.mpdiv {
+  margin-bottom: 10px;
+}
+
+.mpcontainer {
+    /* justify-content: center; */
     width: 500px;
 }
 
@@ -172,4 +178,8 @@ legend {
 small {
   color: red;
 }
+label {
+  padding-top: 10px;
+}
+
 </style>

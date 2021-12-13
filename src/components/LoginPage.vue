@@ -2,7 +2,7 @@
 <div class="bawbody">
   <form class="container h-100">
     <fieldset>
-    <legend>BlackandWhite</legend>
+    <legend><h1>BLACK AND WHITE</h1></legend>
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-4 col-form-label">아이디</label>
         <div class="col-sm-8">
@@ -44,3 +44,29 @@ export default {
   name : 'LoginPage',
 }
 </script>
+
+<style>
+
+.mpdiv {
+  margin-bottom: 10px;
+}
+
+.mpcontainer {
+    /* justify-content: center; */
+    width: 500px;
+}
+
+legend {
+  text-align: center;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  padding-top: 10px;
+}
+
+</style>
