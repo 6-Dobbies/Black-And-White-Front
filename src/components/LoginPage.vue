@@ -2,7 +2,7 @@
 <div class="bawbody">
   <form class="container h-100">
     <fieldset>
-    <legend>BlackandWhite</legend>
+    <legend><h1>BLACK AND WHITE</h1></legend>
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-4 col-form-label">아이디</label>
         <div class="col-sm-8">
@@ -47,28 +47,26 @@ export default {
 
 <style>
 
-html,
-body {
-  height: 100%
-  
+.mpdiv {
+  margin-bottom: 10px;
 }
 
-div {
-  margin-bottom: 5px;
-}
-
-.container {
-    justify-content: center;
+.mpcontainer {
+    /* justify-content: center; */
     width: 500px;
-  margin-left: auto;
-  margin-right: auto;   
-  /* border:1px solid black; */
-
 }
 
 legend {
-  text-align:center
+  text-align: center;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+label {
+  padding-top: 10px;
+}
 
 </style>
