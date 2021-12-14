@@ -56,10 +56,7 @@ import data from '@/data'
                 this.$router.push({
                     path: '@/views/board' 
                 })
-                
             }
         }
-        
-    
     }
 </script>
