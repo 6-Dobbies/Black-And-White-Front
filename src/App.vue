@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     getData() {
-      axios.get('http://localhost:80/members/all')
+      axios.get('http://localhost:8079/members/all')
       .then(res => {
         console.log(res)
         // const data = res.data

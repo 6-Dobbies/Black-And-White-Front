@@ -67,13 +67,7 @@
     </div>
 </template>
 
-<script>
-    // export default {
-    //     name: 'BoardWrite',
-    //     props: {
-    //         post: String
-    //     }
-    // }
+<script> 
 
 import data from '@/data'
 
