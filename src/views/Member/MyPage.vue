@@ -11,7 +11,7 @@
 
 <script>
 // @ is an alias to /src
-import MyPageInfo from '@/components/MyPageInfo.vue'
+import MyPageInfo from '@/components/Member/MyPageInfo.vue'
 
 export default {
   name: 'MyPage',
