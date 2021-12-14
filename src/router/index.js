@@ -37,6 +37,10 @@ const routes = [
     path: '/detail/:valueIndex',
     name: 'Detail',
     component: BoardDetail
+  },
+  {
+    path: '/membertable',
+    component: () => import('../views/Member.vue')
   }
 ]
 

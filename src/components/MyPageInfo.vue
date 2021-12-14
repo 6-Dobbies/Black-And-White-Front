@@ -8,7 +8,7 @@
     <router-link to="/"><legend>Black And White</legend></router-link>
   </div>
   <!-- <form @submit.prevent="formSubmit" action="" class="container h-100" method="post"> -->
-  <form class="mpcontainer h-100">
+  <form @submit="submitForm" class="mpcontainer h-100">
     <!-- <div class="form-group row">
       <label for="userName" class="form-label mt-4">이름</label>
       <input type="text" class="form-control" placeholder="이름을 입력해주세요." id="userName" v-model="userName" required>
@@ -106,7 +106,7 @@
     </div>
     
     <div class="d-grid gap-2 mt-5" style="padding-top: 70px;">
-      <button class="btn btn-lg btn-primary" @click="submitForm">가입하기</button>
+      <button class="btn btn-lg btn-primary" type="submit">가입하기</button>
     </div>
   </form>
 </div>
@@ -116,7 +116,6 @@
 <script>
 import axios from 'axios';
 axios.defaults.baseURL="http://localhost:80";
-
 export default {
   name: "MyPageInfo",
   data() {
@@ -132,21 +131,18 @@ export default {
         email : "",
         region : "",
         tier : "",
-        del : 0,
-        role : [],
-      }
+      },
     }
   },
-  "success": true,
-  "code": 0,
-  "message": "성공",
+  watch : {
+  },
   methods : {
     testForm() {
       console.log(JSON.stringify(this.form));
     },
     submitForm() {
       axios.post("/member",{
-        data :this.form})
+        data : this.form})
       .then(res => {
         console.log(res.data);
         this.$router.push('/');
@@ -154,31 +150,26 @@ export default {
       .catch(err => {
         console.log(err);
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style>
-
 .mpdiv {
   margin-bottom: 10px;
 }
-
 .mpcontainer {
     /* justify-content: center; */
     width: 500px;
 }
-
 legend {
   text-align: center;
 }
-
 small {
   color: red;
 }
 label {
   padding-top: 10px;
 }
-
 </style>
