@@ -44,6 +44,10 @@ const routes = [
     component: BoardDetail
   },
   {
+    path: '/membertable',
+    component: () => import('../views/Member.vue')
+  },
+  {
     path: '/findid',
     name: 'LoginId',
     component: () => import('../views/LoginId.vue')
