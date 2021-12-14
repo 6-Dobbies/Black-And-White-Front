@@ -20,7 +20,7 @@ export default {
     getData() {
       axios.get('http://localhost:8079/members/all')
       .then(res => {
-        console.log(res)
+        res.data.list.forEach(item => console.log(item.memberId))
         // const data = res.data
         // this.products = data
       })
