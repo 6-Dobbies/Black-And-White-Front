@@ -22,13 +22,13 @@
       <div class="container px-4" style="padding-top: 50px;">
         <div class="row justify-content-center row gx-4">
           <div class="col-4">
-            <button type="button" class="btn btn-primary">비밀번호 찾기</button>
+            <router-link to="/findpassword"><button type="button" class="btn btn-primary">비밀번호 찾기</button></router-link>
           </div>
           <div class="col-4">
-            <button type="button" class="btn btn-primary">아이디 찾기</button>
+            <router-link to="/findid"><button type="button" class="btn btn-primary">아이디 찾기</button></router-link>
           </div>
           <div class="col-4">
-            <button type="button" class="btn btn-primary">회원가입</button>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary">회원가입</button></router-link>
           </div>
         </div>
       </div>

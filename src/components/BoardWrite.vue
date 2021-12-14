@@ -61,44 +61,47 @@
         </div>
         <br><br>
         <div class="btn-group" role="group" aria-label="Basic example">
-        <button @click="submit" class="btn btn-secondary">작성</button>
+        <button @click="index !== undefined ? modified() : write()" class="btn btn-secondary">{{index !== undefined ? '수정' : '작성'}}</button>
         <button @click="cancel" class="btn btn-secondary">취소</button>
         </div>
     </div>
 </template>
 
-<script>
-    // export default {
-    //     name: 'BoardWrite',
-    //     props: {
-    //         post: String
-    //     }
-    // }
+<script> 
 
 import data from '@/data'
 
 export default {
     name: 'BoardWrite',
     data() {
+        const index = this.$route.params.valueIndex;
         return {
             data: data,
-            title: "",
-            content: ""
+            index: index,
+            title: index !== undefined ? data[index].title : "",
+            content: index !== undefined ? data[index].content : ""
         }
     },
     methods: {
-        submit(){
+        write() {
             this.data.push({
                 title: this.title,
                 content: this.content,
             })
             this.$router.push({
-                path: '@/views/board'
+                path: '/board'
+            })
+        },
+        modified() {
+            data[this.index].title = this.title
+            data[this.index].content = this.content
+            this.$router.push({
+                path: '/board'
             })
         },
         cancel(){
             this.$router.push({
-                path: '@/views/board'
+                path: '/board'
             })
         }
     }

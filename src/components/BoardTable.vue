@@ -123,18 +123,11 @@
                 </li>
             </ul>
         </div>
-        <!-- <router-link to="/boardwrite"><button type="button" class="btn btn-secondary">글쓰기</button></router-link> -->
-        <button @click="write" class="btn btn-secondary">글쓰기</button>
+        <router-link to="/boardwrite"><button type="button" class="btn btn-secondary">글쓰기</button></router-link>
     </div>
 </template>
 
 <script>
-
-// export default {
-//     name: 'BoardTable',
-//     props: {
-//         msg: String
-//     }
 
 import data from '@/data'
 
@@ -145,12 +138,7 @@ export default {
             data: data
         }
     },
-    methods: {
-        write(){
-            this.$router.push({
-                path: 'boardwrite'
-            })
-        },
+    methods: {        
         detail(index){
             this.$router.push({
                 name: 'BoardDetail',
