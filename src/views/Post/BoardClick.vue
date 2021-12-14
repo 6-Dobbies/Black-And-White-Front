@@ -6,18 +6,18 @@
   <hr class="bawline" style="height: 5px;">
 </div>
 <div class="bawbody">
-  <BoardDetail/>
+  <PostDetail/>
 </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import BoardDetail from '@/components/BoardDetail.vue'
+import PostDetail from '@/components/Post/PostDetail.vue'
 
 export default {
   name: 'BoardClick',
   components: {
-    BoardDetail,
+    PostDetail,
   },
   data() {
     return {
