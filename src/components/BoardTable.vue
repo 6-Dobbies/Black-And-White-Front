@@ -145,10 +145,10 @@ export default {
             data: data
         }
     },
-    methods: {
-        write(){
+    methods: {        
+        write() {
             this.$router.push({
-                path: 'boardwrite'
+                path: '/boardwrite'
             })
         },
         detail(index){

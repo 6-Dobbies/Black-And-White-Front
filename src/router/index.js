@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import BoardDetail from '@/components/BoardDetail'
-
+import BoardWrite from '@/components/BoardWrite'
 const routes = [
   {
     path: '/',
@@ -14,7 +14,7 @@ const routes = [
     component: () => import('../views/MyPage.vue')
   }, 
   {
-    path: '/login',
+    path: '/loginpage',
     name: 'Login',
     component: () => import('../views/Login.vue')
   }, 
@@ -30,13 +30,33 @@ const routes = [
   },
   {
     path: '/boarddetail',
-    name: 'BoardDetail',
+    name: 'BoardClick',
     component: () => import('../views/BoardClick.vue')
   },
   {
-    path: '/detail/:valueIndex',
-    name: 'Detail',
+    path: '/boardwrite/:valueIndex',
+    name: 'BoardWrite',
+    component: BoardWrite
+  },
+  {
+    path: '/boarddetail/:valueIndex',
+    name: 'BoardDetail',
     component: BoardDetail
+  },
+  {
+    path: '/findid',
+    name: 'LoginId',
+    component: () => import('../views/LoginId.vue')
+  },
+  {
+    path: '/findpassword',
+    name: 'LoginPassword',
+    component: () => import('../views/LoginPassword.vue')
+  },
+  {
+    path: '/signuppage',
+    name: 'SignUp',
+    component: () => import('../views/Signup.vue')
   }
 ]
 
