@@ -1,7 +1,7 @@
 <template>
   <BAWHeader/>
-  <button @click="getData">테스트</button>
-  <button @click="getDel">테스트(manager)</button>
+  <!-- <button @click="getData">테스트</button>
+  <button @click="getDel">테스트(manager)</button> -->
   <BAWFooter/>
   <router-view/>
 </template>
