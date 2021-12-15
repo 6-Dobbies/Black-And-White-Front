@@ -28,7 +28,7 @@
                     <td style="min-width:50px;" v-text="member.gender"></td>
                     <td style="min-width:70px;" v-text="member.region"></td>
                     <td style="max-width:100px;" v-text="member.tier"></td>
-                    <td v-text="member.role"></td>
+                    <td v-text="member.role[0]"></td>
                     <td style="min-width:50px;" v-text="member.del"></td>
                 </tr>
             </tbody>
@@ -59,8 +59,6 @@
                 </li>
             </ul>
         </div>
-        <!-- <router-link to="/boardwrite"><button type="button" class="btn btn-secondary">글쓰기</button></router-link> -->
-        <button @click="write" class="btn btn-secondary">글쓰기</button>
     </div>
 </template>
 
