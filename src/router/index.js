@@ -1,42 +1,64 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import BoardDetail from '@/components/BoardDetail'
-
+import PostDetail from '@/components/Post/PostDetail'
+import PostWrite from '@/components/Post/PostWrite'
 const routes = [
   {
     path: '/',
-    name: 'Home',
     component: Home
   },
   {
     path: '/myPageInfo',
-    name: 'MyPage',
-    component: () => import('../views/MyPage.vue')
+    component: () => import('../views/Member/MyPage.vue')
   }, 
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import('../views/Login.vue')
+    path: '/loginpage',
+    component: () => import('../views/Member/Login.vue')
   }, 
   { 
     path: '/board',
-    name: 'Board',
-    component: () => import('../views/Board.vue')
+    component: () => import('../views/Board/Board.vue')
   },
   {
     path: '/boardwrite',
-    name: 'BoardWriter',
-    component: () => import('../views/BoardWriter.vue')
+    component: () => import('../views/Post/PostWriter.vue')
   },
   {
-    path: '/boarddetail',
-    name: 'BoardDetail',
-    component: () => import('../views/BoardClick.vue')
+    path: '/postdetail',
+    component: () => import('../views/Post/BoardClick.vue')
   },
   {
-    path: '/detail/:valueIndex',
-    name: 'Detail',
-    component: BoardDetail
+    path: '/boardwrite/:valueIndex',
+    component: PostWrite
+  },
+  {
+    path: '/postdetail/:valueIndex',
+    component: PostDetail
+  },
+  {
+    path: '/membertable',
+    component: () => import('../views/Member/Member.vue')
+  },
+  {
+    path: '/memberdetail',
+    component: () => import('../views/Member/Member.vue')
+  },
+  {
+    path: '/findid',
+    component: () => import('../views/Member/LoginId.vue')
+  },
+  {
+    path: '/findpassword',
+    component: () => import('../views/Member/LoginPassword.vue')
+  },
+  {
+    path: '/signuppage',
+    component: () => import('../views/Member/Signup.vue')
+  },
+  {
+    path: '/contactuspage',
+    name: 'Contactus',
+    component: () => import('../views/Member/Contactus.vue')
   }
 ]
 

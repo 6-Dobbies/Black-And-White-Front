@@ -1,27 +1,29 @@
 <template>
-    <div class="bawbody">
+    <div>
+        MemberDetail 페이지 테스트
+        <!-- <form class="container h-100">
         <div class="form-group">
             <label class="col-form-label mt-4" for="inputDefault">Title</label>
             <input
-                v-model="title"
+                v-model="data.title"
                 type="text"
                 class="form-control"
                 placeholder="제목을 입력하세요"
                 id="inputDefault"
                 readonly="readonly">
-            {{data.title}}    
+            
         </div>
         <div class="form-group">
             <label for="exampleTextarea" class="col-form-label mt-4">Content</label>
             <textarea
-                v-model="content" 
+                v-model="data.content" 
                 class="form-control"
                 placeholder="내용을 입력하세요"
                 id="exampleTextarea"
                 rows="10"
                 readonly="readonly">
             </textarea>
-            {{data.content}}
+            
         </div>
         
         <br><br>
@@ -30,6 +32,7 @@
         <button @click="deleted" class="btn btn-secondary">삭제</button>
         <button @click="list" class="btn btn-secondary">목록</button>
         </div>
+        </form> -->
     </div>
 </template>
 
@@ -45,21 +48,26 @@ import data from '@/data'
                 index: index,
             }
         },
-        methods: {
+        methods: {            
             deleted() {
                 data.splice(this.index, 1)
                 this.$router.push({
-                    path: '@/views/board'
+                    path: '/board'
+                })
+            },
+            modified() {
+                this.$router.push({
+                    name: 'BoardWrite',
+                    params: {
+                        valueIndex: this.index
+                    }
                 })
             },
             list(){
                 this.$router.push({
-                    path: '@/views/board' 
-                })
-                
+                    path: '/board' 
+                })                
             }
         }
-        
-    
     }
 </script>

@@ -14,7 +14,7 @@
 
 <script>
 // @ is an alias to /src
-import BoardTable from '@/components/BoardTable.vue'
+import BoardTable from '@/components/Board/BoardTable.vue'
 
 export default {
   name: 'Board',

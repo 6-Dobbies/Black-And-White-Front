@@ -1,13 +1,13 @@
 export default [
     {
-        index: 1,
+        index: "1",
         title: '공지용',
         user: 'user',
         created: '2021-12-01',
         modified: '-'
     },
     {
-        index: 6,
+        index: "6",
         title: 'title',
         user: 'user',
         created: '2021-12-01',

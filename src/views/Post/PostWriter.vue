@@ -6,7 +6,7 @@
     <hr class="bawline" style="height: 5px;">
   </div>
   <div>
-    <BoardWrite post="글글글"/>
+    <PostWrite post="글글글"/>
   </div>
 </template>
 
@@ -14,12 +14,12 @@
 
 <script>
 // @ is an alias to /src
-import BoardWrite from '@/components/BoardWrite.vue'
+import PostWrite from '@/components/Post/PostWrite.vue'
 
 export default {
-  name: 'BoardWriter',
+  name: 'PostWriter',
   components: {
-    BoardWrite,
+    PostWrite,
   },
   data() {
     return {
