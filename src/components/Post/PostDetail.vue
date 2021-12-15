@@ -4,25 +4,23 @@
         <div class="form-group">
             <label class="col-form-label mt-4" for="inputDefault">Title</label>
             <input
-                v-model="data.title"
+                v-model="title"
                 type="text"
                 class="form-control"
                 placeholder="제목을 입력하세요"
                 id="inputDefault"
-                readonly="readonly">
-            
+                readonly="readonly">           
         </div>
         <div class="form-group">
             <label for="exampleTextarea" class="col-form-label mt-4">Content</label>
             <textarea
-                v-model="data.content" 
+                v-model="post.content" 
                 class="form-control"
                 placeholder="내용을 입력하세요"
                 id="exampleTextarea"
                 rows="10"
                 readonly="readonly">
-            </textarea>
-            
+            </textarea>            
         </div>
         
         <br><br>
@@ -36,37 +34,27 @@
 </template>
 
 <script>
-import data from '@/data'
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:8079";
 
-    export default {
-        name: 'BoardDetail',
-         data() {
-            const index = this.$route.params.valueIndex
-            return {
-                data: data[index],
-                index: index,
-            }
-        },
-        methods: {            
-            deleted() {
-                data.splice(this.index, 1)
-                this.$router.push({
-                    path: '/board'
-                })
-            },
-            modified() {
-                this.$router.push({
-                    name: 'BoardWrite',
-                    params: {
-                        valueIndex: this.index
-                    }
-                })
-            },
-            list(){
-                this.$router.push({
-                    path: '/board' 
-                })                
-            }
+export default {
+    name: 'PostDetail',
+    data() {        
+        return {
+            post: "",                
         }
-    }
+    },
+    methods: {            
+        getData() {
+            axios.get('/posts/idx/' + this.$route.query.postIdx)
+            .then(res => {
+                this.post = res.data.data;                    
+            })
+            .catch(error => console.log(error));
+        },
+    },
+    mounted() {
+        this.getData();
+    }        
+}
 </script>

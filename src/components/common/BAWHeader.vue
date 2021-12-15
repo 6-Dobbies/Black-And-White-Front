@@ -38,7 +38,7 @@
             </ul>
               <div class="btn-group" role="group" aria-label="Basic example">
                 <router-link to="/loginpage"><button type="button" class="btn btn-secondary">로그인</button></router-link>
-                <router-link to="/signuppage"><button type="button" class="btn btn-secondary">회원가입</button></router-link>
+                <router-link to="/myPageInfo"><button type="button" class="btn btn-secondary">회원가입</button></router-link>
               </div>
             </div>
             </div>

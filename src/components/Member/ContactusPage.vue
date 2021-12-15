@@ -57,7 +57,7 @@
 
 <script>
 export default {
-  name: "SignupPage",
+  name: "ContactusPage",
   props: {
     msg: String,
   },
