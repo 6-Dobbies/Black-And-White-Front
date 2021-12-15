@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: "header",
+  name: "bawheader",
   
 };
 </script>

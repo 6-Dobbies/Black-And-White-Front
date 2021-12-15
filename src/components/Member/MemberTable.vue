@@ -86,7 +86,7 @@ export default {
             .catch(error => console.log(error));
         },
         detail(member) {
-            this.$router.push({path : '/memberdetail', params : {memberIdx : member.memberIdx}});
+            this.$router.push({path : '/memberdetail', query : {memberIdx : member.memberIdx}});
         }
     },
     mounted() {
