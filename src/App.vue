@@ -2,7 +2,6 @@
   <BAWHeader/>
   <button @click="getData">테스트</button>
   <button @click="getDel">테스트(manager)</button>
-  <router-link to="/membertable"><button>회원 전체</button></router-link>
   <BAWFooter/>
   <router-view/>
 </template>
