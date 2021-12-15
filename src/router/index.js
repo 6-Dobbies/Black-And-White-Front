@@ -41,7 +41,7 @@ const routes = [
   },
   {
     path: '/memberdetail',
-    component: () => import('../views/Member/Member.vue')
+    component: () => import('../views/Member/MemberInfo.vue')
   },
   {
     path: '/findid',
