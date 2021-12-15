@@ -132,115 +132,17 @@ export default {
         region : "",
         tier : "",
       },
-      // userName : "",
-      // userPasswordConfirm : "",
-      // condition : [false,false,false,false,false,false],
-      // // memberId : "",
-      // pw : "",
-      // pwQuestion : "",
-      // pwAnswer : "",
-      // nickname : "",
-      // birthYear : "",
-      // gender : "",
-      // email : "",
-      // region : "",
-      // tier : "",
     }
   },
   watch : {
-    // userName(a) {
-    //     if (a == "") {
-    //     this.condition[0] = true; 
-    //     // this.userName = "";
-    //   } else {
-    //     this.condition[0] = false;
-    //   }
-    // },
-    // nickname(a) {
-    //   // if (a == "") {
-    //   //   this.condition[1] = true;
-    //   // } else {
-    //   //   this.condition[1] = false;
-    //   // }
-    //   axios.get('http://localhost:80/members/all')
-    //   .then(res => {
-    //     res.data.list.forEach(item => this.data1.push(item))
-    //     if (this.data1[0].nickname == a) {
-    //       console.log('===============');
-    //     } 
-    //   })
-    //     // if (a == res.data.list[0].nickname) {
-    //     //  this.condition[1] = true;
-    //     // } else {
-    //     //   this.condition[1] = false;
-    //     // } 
-    //   .catch(error => console.log(error))
-    // },
-    // userId(a) {
-    //   axios.get('http://localhost:80/members/all')
-    //   .then(res => {
-    //     let val = []; //eslint-disable-line no-unused-vars
-    //     val = res.data.list;
-    //     if (val.forEach(item => item.memberId == a)) {
-    //      this.condition[2] = true;
-    //     } else {
-    //       this.condition[2] = false;
-    //     } 
-    //   })
-    //   .catch(error => console.log(error))
-      
-    //   // if (a == "") {
-    //   //   this.condition[2] = true;
-    //   // } else {
-    //   //   this.condition[2] = false;
-    //   // }
-    // },
-    // userPassword(a) {
-    //   if (a == "") {
-    //     this.condition[3] = true;
-    //   } else {
-    //     this.condition[3] = false;
-    //   }
-    // },
-    // userPasswordConfirm(a) {
-    //    if (a != this.userPassword) {
-    //     this.condition[4] = true;
-    //   } else {
-    //     this.condition[4] = false;
-    //   }
-    // },
-    // passwordQue(a) {
-    //    if (a == null) {
-    //     this.condition[5] = true;
-    //   } else {
-    //     this.condition[5] = false;
-    //   }
-    // },
-    // userMail(a) {
-    //   let regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
-    //   if (regEmail.test(a) === false) {
-    //     this.condition[5] = true;
-    //   } else {
-    //     this.condition[5] = false;
-    //   }
-    // },
   },
   methods : {
-    // submitForm() {
-    //   axios.post("http://localhost:80/member", JSON.stringify(this.form))
-    //   .then(res => {
-    //     console.log(res.data);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   })
-    // },
     testForm() {
       console.log(JSON.stringify(this.form));
     },
     submitForm() {
       axios.post("/member",{
-        data :this.form})
+        data : this.form})
       .then(res => {
         console.log(res.data);
         this.$router.push('/');
@@ -249,22 +151,6 @@ export default {
         console.log(err);
       })
     },
-  
-      // if (this.userId == ) {
-        
-      //   return false;
-      // }
-      // let regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
-      //   if (!regEmail.test(this.userMail) === false) {
-      //     this.userMail = "";
-      //     return false;
-      //   }
-      //   if (this.userPassword != this.userPasswordConfirm) {
-      //     this.userPassword = "";
-      //     this.userPasswordConfirm = "";
-      //     return false;
-      //   }
-        // if (thi)
   },
 }
 </script>

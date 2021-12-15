@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import ContactusPage from '@/components/ContactusPage.vue';
+import ContactusPage from '@/components/Member/ContactusPage.vue';
 
 export default {
   name : 'Contactus',

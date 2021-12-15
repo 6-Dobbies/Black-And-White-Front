@@ -1,5 +1,7 @@
 <template>
-    <div class="bawbody">
+    <div>
+        MemberDetail 페이지 테스트
+        <!-- <form class="container h-100">
         <div class="form-group">
             <label class="col-form-label mt-4" for="inputDefault">Title</label>
             <input
@@ -30,6 +32,7 @@
         <button @click="deleted" class="btn btn-secondary">삭제</button>
         <button @click="list" class="btn btn-secondary">목록</button>
         </div>
+        </form> -->
     </div>
 </template>
 

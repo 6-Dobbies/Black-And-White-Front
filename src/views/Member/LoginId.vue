@@ -1,15 +1,16 @@
 <template>
-  <LoginPage />
+  <FindId />
 
 </template>
 
 <script>
-import LoginPage from '@/components/LoginPage.vue';
+import FindId from '@/components/Member/FindId.vue';
 
 export default {
-  name : 'Login',
+  name : 'LoginId',
   components : {
-    LoginPage,
+    
+    FindId,
   }
 }
 </script>
