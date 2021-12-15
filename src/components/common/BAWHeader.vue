@@ -31,6 +31,10 @@
                   <a class="dropdown-item">🃏 Card</a>
                 </div>
                 </li>
+
+                <router-link to="/membertable" style="text-decoration: none;">
+                  <li class="nav-item"><a class="nav-link active">MemberAll</a></li>
+                </router-link>
             </ul>
               <div class="btn-group" role="group" aria-label="Basic example">
                 <router-link to="/loginpage"><button type="button" class="btn btn-secondary">로그인</button></router-link>

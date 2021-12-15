@@ -1,6 +1,6 @@
 <template>
     <div class="bawbody">
-        <table class="table table-hover bawtable">
+        <table class="table table-hover">
             <tr>
                 <th scope="row">번호</th>
                 <td v-text="member.memberIdx"></td>
@@ -53,10 +53,10 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:8079";
+axios.defaults.baseURL="http://localhost:80";
 
 export default {
-    name: 'BoardDetail',
+    name: 'MemberUpdate',
     data() {
         return{
             member: "",
@@ -110,17 +110,16 @@ export default {
 
 <style>
 .bawtable {
-    margin-left: 30%;
+    margin-left: 50%;
 }
 
 th {
-    max-width: 100px;
+    width: 100px;
     height: 50px;
     text-align: center;
 }
 
 td {
-    max-width: 200px;
     height: 50px;
     text-align: left;
 }
