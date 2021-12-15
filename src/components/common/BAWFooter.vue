@@ -80,7 +80,7 @@
 
 <script>
 export default {
-  name: "footer"
+  name: "bawfooter"
 };
 </script>
 

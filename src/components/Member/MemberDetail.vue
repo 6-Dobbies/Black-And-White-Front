@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bawbody">
         MemberDetail 페이지 테스트
         <!-- <form class="container h-100">
         <div class="form-group">
@@ -37,37 +37,58 @@
 </template>
 
 <script>
-import data from '@/data'
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:80";
 
-    export default {
-        name: 'BoardDetail',
-         data() {
-            const index = this.$route.params.valueIndex
-            return {
-                data: data[index],
-                index: index,
-            }
-        },
-        methods: {            
-            deleted() {
-                data.splice(this.index, 1)
-                this.$router.push({
-                    path: '/board'
-                })
-            },
-            modified() {
-                this.$router.push({
-                    name: 'BoardWrite',
-                    params: {
-                        valueIndex: this.index
-                    }
-                })
-            },
-            list(){
-                this.$router.push({
-                    path: '/board' 
-                })                
-            }
+export default {
+    name: 'BoardDetail',
+    data() {
+        return{
+            member: "",
         }
+    },
+    methods: {
+        getData() {
+            axios.get('/members/idx/' + this.route.query.memberIdx)
+            .then(res => {
+                // res.data.list.forEach(item => console.log(item));
+                // console.log(res.data.list);
+                this.member = res.data;
+                console.log(res);
+            })
+            .catch(error => console.log(error));
+        },
+    },
+    mounted() {
+        this.getData();
     }
+    //  data() {
+    //     const index = this.$route.params.valueIndex
+    //     return {
+    //         data: data[index],
+    //         index: index,
+    //     }
+    // },
+    // methods: {            
+    //     deleted() {
+    //         data.splice(this.index, 1)
+    //         this.$router.push({
+    //             path: '/board'
+    //         })
+    //     },
+    //     modified() {
+    //         this.$router.push({
+    //             name: 'BoardWrite',
+    //             params: {
+    //                 valueIndex: this.index
+    //             }
+    //         })
+    //     },
+    //     list(){
+    //         this.$router.push({
+    //             path: '/board' 
+    //         })                
+    //     }
+    // }
+}
 </script>
