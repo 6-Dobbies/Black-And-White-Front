@@ -8,10 +8,6 @@ const routes = [
     component: Home
   },
   {
-    path: '/myPageInfo',
-    component: () => import('../views/Member/MyPage.vue')
-  }, 
-  {
     path: '/loginpage',
     component: () => import('../views/Member/Login.vue')
   }, 
