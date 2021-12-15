@@ -115,8 +115,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
-
+axios.defaults.baseURL="http://localhost:8079";
 export default {
   name: "MyPageInfo",
   data() {
@@ -158,13 +157,11 @@ export default {
     //   }
     // },
     // nickname(a) {
-
     //   // if (a == "") {
     //   //   this.condition[1] = true;
     //   // } else {
     //   //   this.condition[1] = false;
     //   // }
-
     //   axios.get('http://localhost:80/members/all')
     //   .then(res => {
     //     res.data.list.forEach(item => this.data1.push(item))
@@ -219,8 +216,6 @@ export default {
     //     this.condition[5] = false;
     //   }
     // },
-
-
     // userMail(a) {
     //   let regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
     //   if (regEmail.test(a) === false) {
@@ -229,7 +224,6 @@ export default {
     //     this.condition[5] = false;
     //   }
     // },
-
   },
   methods : {
     // submitForm() {
@@ -260,44 +254,36 @@ export default {
         
       //   return false;
       // }
-
       // let regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
       //   if (!regEmail.test(this.userMail) === false) {
       //     this.userMail = "";
       //     return false;
       //   }
-
       //   if (this.userPassword != this.userPasswordConfirm) {
       //     this.userPassword = "";
       //     this.userPasswordConfirm = "";
       //     return false;
       //   }
-
         // if (thi)
   },
 }
 </script>
 
 <style>
-
 .mpdiv {
   margin-bottom: 10px;
 }
-
 .mpcontainer {
     /* justify-content: center; */
     width: 500px;
 }
-
 legend {
   text-align: center;
 }
-
 small {
   color: red;
 }
 label {
   padding-top: 10px;
 }
-
 </style>
