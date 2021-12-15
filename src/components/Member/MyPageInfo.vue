@@ -103,6 +103,7 @@
 <script>
 import axios from 'axios';
 axios.defaults.baseURL="http://localhost:80";
+
 export default {
   name: "MyPageInfo",
   data() {
@@ -257,20 +258,25 @@ export default {
 </script>
 
 <style>
+
 .mpdiv {
   margin-bottom: 10px;
 }
+
 .mpcontainer {
     /* justify-content: center; */
     width: 500px;
 }
+
 legend {
   text-align: center;
 }
+
 small {
   color: red;
 }
 label {
   padding-top: 10px;
 }
+
 </style>
