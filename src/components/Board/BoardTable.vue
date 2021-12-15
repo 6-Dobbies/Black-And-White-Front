@@ -11,13 +11,25 @@
                 </tr>
             </thead>
             <tbody>                
-                <tr class="table-dark" v-for="(value, index) in data" @click="detail(index)" :key="index">                    
+                <!-- <tr class="table-dark" v-for="(value, index) in data" @click="detail(index)" :key="index">                    
                     <th scope="row">{{value.index}}</th>                    
                     <td>{{value.title}}</td>                    
                     <td>{{value.user}}</td>                    
                     <td>{{value.created}}</td>                    
                     <td>{{value.modified}}</td>
+                </tr> -->
+
+                <tr class="table-dark" v-if="postlist.length == 0">
+                    <td colspan="5" style="text-align: center">게시글이 없습니다.</td>
                 </tr>
+                <tr class="table-dark" v-for="post in postlist" v-bind:key="post.postIdx" @click="detail(post)">                 
+                    <td v-text="post.postIdx"></td>                    
+                    <td v-text="post.title"></td>                    
+                    <td v-text="post.writer"></td>                    
+                    <td v-text="post.created"></td>                    
+                    <td v-text="post.updated"></td>
+                </tr>
+
                 <!-- <tr class="table-danger">
                     <th scope="row">1</th>                    
                     <td><router-link to="/boarddetail">공지용</router-link></td> 
@@ -128,26 +140,31 @@
 </template>
 
 <script>
-
-import data from '@/data'
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
     name: 'BoardTable',
     data(){
         return{
-            data: data
+            postlist: [],
         }
     },
     methods: {        
-        detail(index){
-            this.$router.push({
-                name: 'BoardDetail',
-                params: {
-                    valueIndex: index
-                }
+        getData() {
+            axios.get('/posts/category/자유')
+            .then(res => {
+                this.postlist = res.data.list;
+                console.log(res);
             })
+            .catch(error => console.log(error));
+        },
+        detail(post) {
+            this.$router.push({path : '/postdetail', params : {postIdx : post.postIdx}});            
         }
-    }
-}
-    
+    },
+    mounted() {
+        this.getData();
+    }            
+}    
 </script>
