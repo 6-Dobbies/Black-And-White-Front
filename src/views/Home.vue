@@ -17,6 +17,9 @@ export default {
   name: 'Home',
   components: {
     HelloWorld, 
-  }
+  },
+  // created() {
+  //   this.$forceUpdate();
+  // }
 }
 </script>
