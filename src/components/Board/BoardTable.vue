@@ -160,7 +160,7 @@ export default {
             .catch(error => console.log(error));
         },
         detail(post) {
-            this.$router.push({path : '/postdetail', params : {postIdx : post.postIdx}});            
+            this.$router.push({path : '/postdetail', query : {postIdx : post.postIdx}});            
         }
     },
     mounted() {

@@ -4,7 +4,7 @@
         <div class="form-group">
             <label class="col-form-label mt-4" for="inputDefault">Title</label>
             <input
-                v-model="title"
+                v-model="post.title"
                 type="text"
                 class="form-control"
                 placeholder="제목을 입력하세요"
@@ -21,7 +21,7 @@
                 rows="10"
                 readonly="readonly">
             </textarea>            
-        </div>
+        </div> 
         
         <br><br>
         <div class="btn-group" role="group" aria-label="Basic example">
@@ -48,7 +48,8 @@ export default {
         getData() {
             axios.get('/posts/idx/' + this.$route.query.postIdx)
             .then(res => {
-                this.post = res.data.data;                    
+                this.post = res.data.data;
+                console.log(res);                    
             })
             .catch(error => console.log(error));
         },
