@@ -37,10 +37,10 @@
                 </router-link>
             </ul>
               <div class="btn-group" role="group" aria-label="Basic example">
-                <!-- <router-link v-if="!logintoken" to="/loginpage"><button type="button" class="btn btn-secondary">로그인</button></router-link>
-                <router-link v-else @click="logout"><button type="button" class="btn btn-secondary">로그아웃</button></router-link> -->
-                <router-link to="/loginpage"><button type="button" class="btn btn-secondary">로그인</button></router-link>
-                <!-- <button type="button" class="btn btn-secondary">로그아웃</button> -->
+                <button type="button" class="btn btn-secondary" v-if="isToken" @click="logout">로그아웃</button>
+                <router-link to="/loginpage"><button type="button" class="btn btn-secondary" v-if="!isToken">로그인</button></router-link>
+                <!-- <router-link to="/loginpage"><button type="button" class="btn btn-secondary">로그인</button></router-link> -->
+                <!-- <button type="button" class="btn btn-secondary" @click="logout">로그아웃(그냥)</button> -->
                 <router-link to="/signuppage"><button type="button" class="btn btn-secondary">회원가입</button></router-link>
               </div>
             </div>
@@ -55,19 +55,23 @@
 <script>
 export default {
   name: "bawheader",
-  data() {
-    return {
-      logintoken : localStorage.getItem("token")
+  // created: {
+  //   isTokenCheck() {
+  //     this.isToken();
+  //   }
+  // },
+  computed: {
+    isToken() {
+      return localStorage.getItem("token")
     }
   },
-  // methods: {
-  //   logout() {
-  //     if(!this.logintoken) {
-  //       localStorage.removeItem("token");
-  //       location.reload();
-  //     }
-  //   }
-  // }
+  methods: {
+    logout() {
+        localStorage.removeItem("token");
+        this.$router.push('/');
+        this.$forceUpdate();
+    }
+  }
 };
 </script>
 

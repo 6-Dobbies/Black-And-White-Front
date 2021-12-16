@@ -44,7 +44,7 @@
         </table>
         <br><br>
         <div class="btn-group" role="group" aria-label="Basic example">
-        <button @click="modified" class="btn btn-secondary">수정</button>
+        <router-link to="/memberupdate"><button @click="modified" class="btn btn-secondary">수정</button></router-link>
         <button @click="deleted" class="btn btn-secondary">삭제</button>
         <button @click="list" class="btn btn-secondary">목록</button>
         </div>
@@ -53,10 +53,10 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
-    name: 'BoardDetail',
+    name: 'MemberDetail',
     data() {
         return {
             member: "",

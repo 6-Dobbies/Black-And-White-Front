@@ -21,7 +21,7 @@
                 rows="10"
                 readonly="readonly">
             </textarea>            
-        </div> 
+        </div>
         
         <br><br>
         <div class="btn-group" role="group" aria-label="Basic example">
@@ -35,7 +35,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
     name: 'PostDetail',
@@ -48,8 +48,7 @@ export default {
         getData() {
             axios.get('/posts/idx/' + this.$route.query.postIdx)
             .then(res => {
-                this.post = res.data.data;
-                console.log(res);                    
+                this.post = res.data.data;                    
             })
             .catch(error => console.log(error));
         },

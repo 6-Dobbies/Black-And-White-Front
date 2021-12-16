@@ -40,6 +40,10 @@ const routes = [
     component: () => import('../views/Member/MemberInfo.vue')
   },
   {
+    path: '/memberupdate',
+    component: () => import('../views/Member/UpdatePage.vue')
+  },
+  {
     path: '/findid',
     component: () => import('../views/Member/LoginId.vue')
   },
