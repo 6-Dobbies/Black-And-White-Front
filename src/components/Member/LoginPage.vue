@@ -28,7 +28,7 @@
             <router-link to="/findid"><button type="button" class="btn btn-primary">아이디 찾기</button></router-link>
           </div>
           <div class="col-4">
-            <router-link to="/myPageInfo"><button type="button" class="btn btn-primary">회원가입</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary">회원가입</button></router-link>
           </div>
         </div>
       </div>
@@ -57,6 +57,8 @@ export default {
         { headers: { 'Content-Type': 'application/json' }})
       .then(res => {
         console.log(res.data);
+        localStorage.setItem('token', res.data.data);
+        this.$router.push({path : '/'});
       })
       .catch(err => {
         console.log(err);

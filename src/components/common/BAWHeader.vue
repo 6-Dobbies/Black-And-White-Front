@@ -37,8 +37,11 @@
                 </router-link>
             </ul>
               <div class="btn-group" role="group" aria-label="Basic example">
+                <!-- <router-link v-if="!logintoken" to="/loginpage"><button type="button" class="btn btn-secondary">로그인</button></router-link>
+                <router-link v-else @click="logout"><button type="button" class="btn btn-secondary">로그아웃</button></router-link> -->
                 <router-link to="/loginpage"><button type="button" class="btn btn-secondary">로그인</button></router-link>
-                <router-link to="/myPageInfo"><button type="button" class="btn btn-secondary">회원가입</button></router-link>
+                <!-- <button type="button" class="btn btn-secondary">로그아웃</button> -->
+                <router-link to="/signuppage"><button type="button" class="btn btn-secondary">회원가입</button></router-link>
               </div>
             </div>
             </div>
@@ -52,7 +55,19 @@
 <script>
 export default {
   name: "bawheader",
-  
+  data() {
+    return {
+      logintoken : localStorage.getItem("token")
+    }
+  },
+  // methods: {
+  //   logout() {
+  //     if(!this.logintoken) {
+  //       localStorage.removeItem("token");
+  //       location.reload();
+  //     }
+  //   }
+  // }
 };
 </script>
 

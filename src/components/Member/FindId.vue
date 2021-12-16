@@ -37,7 +37,7 @@
             <router-link to="/findpassword"><button type="button" class="btn btn-primary">비밀번호 찾기</button></router-link>
           </div>
           <div class="col-4">
-            <router-link to="/myPageInfo"><button type="button" class="btn btn-primary">회원가입</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary">회원가입</button></router-link>
           </div>
         </div>
       </div>
