@@ -64,7 +64,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:8079";
+axios.defaults.baseURL="http://localhost:80";
 
 export default {
     name: 'MemberTable',
@@ -72,6 +72,9 @@ export default {
         return{
             memberlist: [],
         }
+    },
+    created() {
+        this.getData();
     },
     methods: {
         getData() {
@@ -86,9 +89,6 @@ export default {
         detail(member) {
             this.$router.push({path : '/memberdetail', query : {memberIdx : member.memberIdx}});
         }
-    },
-    mounted() {
-        this.getData();
     }
 }
 </script>

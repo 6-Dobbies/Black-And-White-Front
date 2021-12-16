@@ -1,6 +1,6 @@
 <template>
     <div class="bawbody">
-        <table class="table table-hover bawtable">
+        <table class="table table-hover bawtable" v-if="member.memberIdx">
             <tr>
                 <th scope="row">번호</th>
                 <td v-text="member.memberIdx"></td>
@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <th scope="row">권한</th>
-                <td v-text="member.role"></td>
+                <td v-text="member.role[0]"></td>
             </tr>
             <tr>
                 <th scope="row">탈퇴</th>
@@ -53,29 +53,35 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:8079";
+axios.defaults.baseURL="http://localhost:80";
 
 export default {
     name: 'BoardDetail',
     data() {
-        return{
+        return {
             member: "",
         }
+    },
+    created() {
+        this.getData();
     },
     methods: {
         getData() {
             axios.get('/members/idx/' + this.$route.query.memberIdx)
             .then(res => {
+                this.member = res.data.data;
                 // res.data.list.forEach(item => console.log(item));
                 // console.log(res.data.list);
-                this.member = res.data.data;
-                console.log(res);
+                // console.log(res);
             })
             .catch(error => console.log(error));
         },
-    },
-    mounted() {
-        this.getData();
+        deleted() {
+            axios.patch('/members/' + this.$route.query.memberIdx)
+            .then(res => {
+                this.member = res.data.data;
+            })
+        }
     }
     //  data() {
     //     const index = this.$route.params.valueIndex
