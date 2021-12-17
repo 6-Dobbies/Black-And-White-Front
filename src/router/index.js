@@ -61,7 +61,6 @@ const routes = [
     path: '/memberupdatepage',
     component: () => import('../views/Member/MemberUpdate.vue')
   },
-
 ]
 
 const router = createRouter({

@@ -1,6 +1,6 @@
 <template>
   <div class="bawhead">
-    <router-link to="/"><h1>BLACK  AND  WHITE</h1></router-link>
+    <router-link to="/"><h1>마이 페이지</h1></router-link>
   </div>
   <MemberDetail />
 </template>
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style>
-h1 {
+a {
   text-decoration: none;
 }
 </style>

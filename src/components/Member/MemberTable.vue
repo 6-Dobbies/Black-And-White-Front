@@ -81,7 +81,7 @@ export default {
             axios.get('/members/all')
             .then(res => {
                 // res.data.list.forEach(item => console.log(item));
-                // console.log(res.data.list);
+                console.log(res.data.list);
                 this.memberlist = res.data.list;
             })
             .catch(error => console.log(error));
