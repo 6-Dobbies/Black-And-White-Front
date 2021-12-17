@@ -2,22 +2,20 @@
   <div class="bawhead">
     <router-link to="/"><h1>마이 페이지</h1></router-link>
   </div>
-  <MemberDetail />
+  <MemberUpdatePage />
 </template>
 
 <script>
-import MemberDetail from '@/components/Member/MemberDetail.vue';
+import MemberUpdatePage from '@/components/Member/MemberUpdatePage.vue';
 
 export default {
-  name : 'Member',
+  name : "MemberUpdate",
   components : {
-    MemberDetail,
+    MemberUpdatePage,
   }
 }
 </script>
 
 <style>
-a {
-  text-decoration: none;
-}
+
 </style>
