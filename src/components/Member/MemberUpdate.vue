@@ -1,6 +1,7 @@
 <template>
     <div class="bawbody">
-        <table class="table table-hover">
+        테스트입니다
+        <!-- <table class="table table-hover">
             <tr>
                 <th scope="row">번호</th>
                 <td v-text="member.memberIdx"></td>
@@ -41,42 +42,36 @@
                 <th scope="row">탈퇴</th>
                 <td v-text="member.del"></td>
             </tr>
-        </table>
+        </table> -->
         <br><br>
         <div class="btn-group" role="group" aria-label="Basic example">
-        <button @click="modified" class="btn btn-secondary">수정</button>
-        <button @click="deleted" class="btn btn-secondary">삭제</button>
-        <button @click="list" class="btn btn-secondary">목록</button>
+        <router-link to="/"><button class="btn btn-secondary">완료</button></router-link>
+        <router-link to="/"><button class="btn btn-secondary">취소</button></router-link>
         </div>
     </div>
 </template>
-
 <script>
 import axios from 'axios';
 axios.defaults.baseURL="http://localhost:80";
-
 export default {
     name: 'MemberUpdate',
-    data() {
-        return{
-            member: "",
-        }
-    },
-    methods: {
-        getData() {
-            axios.get('/members/idx/' + this.$route.query.memberIdx)
-            .then(res => {
-                // res.data.list.forEach(item => console.log(item));
-                // console.log(res.data.list);
-                this.member = res.data.data;
-                console.log(res);
-            })
-            .catch(error => console.log(error));
-        },
-    },
-    mounted() {
-        this.getData();
-    }
+    // data() {
+    //     return{
+    //         member: "",
+    //     }
+    // },
+    // methods: {
+        // getData() {
+        //     axios.get('/members/idx/' + this.$route.query.memberIdx)
+        //     .then(res => {
+        //         // res.data.list.forEach(item => console.log(item));
+        //         // console.log(res.data.list);
+        //         this.member = res.data.data;
+        //         console.log(res);
+        //     })
+        //     .catch(error => console.log(error));
+        // },
+    // },
     //  data() {
     //     const index = this.$route.params.valueIndex
     //     return {
@@ -101,27 +96,23 @@ export default {
     //     },
     //     list(){
     //         this.$router.push({
-    //             path: '/board' 
+    //             path: '/board'
     //         })                
     //     }
     // }
 }
 </script>
-
 <style>
 .bawtable {
     margin-left: 50%;
 }
-
 th {
     width: 100px;
     height: 50px;
     text-align: center;
 }
-
 td {
     height: 50px;
     text-align: left;
 }
-
 </style>

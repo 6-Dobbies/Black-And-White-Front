@@ -1,4 +1,5 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+// import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import PostDetail from '@/components/Post/PostDetail'
 import PostWrite from '@/components/Post/PostWrite'
@@ -40,6 +41,10 @@ const routes = [
     component: () => import('../views/Member/MemberInfo.vue')
   },
   {
+    path: '/memberupdate',
+    component: () => import('../views/Member/UpdatePage.vue')
+  },
+  {
     path: '/findid',
     component: () => import('../views/Member/LoginId.vue')
   },
@@ -59,7 +64,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 

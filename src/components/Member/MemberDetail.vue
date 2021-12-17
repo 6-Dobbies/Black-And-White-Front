@@ -44,9 +44,9 @@
         </table>
         <br><br>
         <div class="btn-group" role="group" aria-label="Basic example">
-        <button @click="modified" class="btn btn-secondary">수정</button>
+        <router-link to="/memberupdate"><button @click="modified" class="btn btn-secondary">수정</button></router-link>
         <button @click="deleted" class="btn btn-secondary">삭제</button>
-        <button @click="list" class="btn btn-secondary">목록</button>
+        <router-link to="/membertable"><button @click="list" class="btn btn-secondary">목록</button></router-link>
         </div>
     </div>
 </template>
@@ -56,7 +56,7 @@ import axios from 'axios';
 axios.defaults.baseURL="http://localhost:80";
 
 export default {
-    name: 'BoardDetail',
+    name: 'MemberDetail',
     data() {
         return {
             member: "",
@@ -70,17 +70,18 @@ export default {
             axios.get('/members/idx/' + this.$route.query.memberIdx)
             .then(res => {
                 this.member = res.data.data;
+                console.log(res.data.data);
                 // res.data.list.forEach(item => console.log(item));
-                // console.log(res.data.list);
                 // console.log(res);
             })
             .catch(error => console.log(error));
         },
         deleted() {
-            axios.patch('/members/' + this.$route.query.memberIdx)
-            .then(res => {
-                this.member = res.data.data;
-            })
+            axios.patch('/members/' + this.$route.query.memberIdx);
+            this.$router.push('/membertable');
+            // .then(res => {
+            //     this.member = res.data.data;
+            // })
         }
     }
     //  data() {
@@ -105,11 +106,6 @@ export default {
     //             }
     //         })
     //     },
-    //     list(){
-    //         this.$router.push({
-    //             path: '/board' 
-    //         })                
-    //     }
     // }
 }
 </script>
