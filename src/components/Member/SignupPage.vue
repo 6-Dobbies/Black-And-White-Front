@@ -2,7 +2,7 @@
 
 <div class="bawbody">
   <div class="mt-4">
-    <router-link to="/"><legend>회원가입</legend></router-link>
+    <router-link to="/"><legend style="margin-top : 30px">회원가입</legend></router-link>
   </div>
   <form @submit="submitForm" class="mpcontainer h-100" autocomplete="off">
     <div class="form-group row">
@@ -38,6 +38,7 @@
     <div class="form-group row">
       <label for="pwQuestion" class="form-label mt-4">비밀번호 찾기 질문</label>
         <select class="form-select" id="pwQuestion" v-model="pwQuestion" required>
+          <option value="" disabled selected>질문을 선택해주세요.</option>
           <option>태어난 도시는 어디인가요?</option>
           <option>가장 기억에 남는 장소는 어디인가요?</option>
           <option>가장 감명 깊게 읽은 책은 무엇인가요?</option>
@@ -55,7 +56,7 @@
     <div class="form-group row">
       <label for="gender" class="form-label mt-4">성별</label>
         <select class="form-select" id="gender" v-model="gender" required>
-          <option>성별</option>
+          <option value="" disabled selected>성별을 선택해주세요.</option>
           <option>남자</option>
           <option>여자</option>
         </select>
@@ -72,7 +73,7 @@
     <div class="form-group row">
       <label for="region" class="form-label mt-4">지역</label>
       <select class="form-select" id="region" v-model="region" required>
-        <option>지역</option>
+        <option value="" disabled selected>지역을 선택해주세요.</option>
         <option>서울특별시</option>
         <option>부산광역시</option>
         <option>인천광역시</option>
@@ -81,8 +82,8 @@
       <small v-if="condition2[8] == true">지역을 선택해주세요..</small>
     </div>
     
-    <div class="d-grid gap-2 mt-5" style="padding-top: 70px;">
-      <button class="btn btn-lg btn-primary" type="submit">가입하기</button>
+    <div class="d-grid gap-2 mt-5">
+      <button class="btn btn-lg btn-primary" type="submit" style="margin-bottom : 80px">가입하기</button>
     </div>
   </form>
 </div>
@@ -169,6 +170,7 @@ export default {
         email : a,
       })
       .then(res => {
+        console.log(res.data);
         if (res.data == false) {
           this.condition[2] = true;
         } else {
@@ -288,6 +290,10 @@ label {
 
 small {
   color : red;
+}
+
+select option[value=""][disabled] {
+	display: none;
 }
 
 </style>
