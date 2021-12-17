@@ -9,7 +9,7 @@
 import MemberDetail from '@/components/Member/MemberDetail.vue';
 
 export default {
-  name : 'Member',
+  name : 'MemberInfo',
   components : {
     MemberDetail,
   }

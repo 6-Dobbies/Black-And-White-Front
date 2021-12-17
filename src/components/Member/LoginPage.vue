@@ -16,7 +16,7 @@
       </div>
     
       <div class="d-grid gap-2">
-        <button class="btn btn-lg btn-primary" type="submit">로그인</button>
+        <button class="btn btn-lg btn-primary" @click="[submitForm(), this.$router.replace('/')]">로그인</button>
       </div>
 
       <div class="container px-4" style="padding-top: 50px;">
@@ -58,9 +58,7 @@ export default {
       .then(res => {
         console.log(res.data);
         localStorage.setItem("token", res.data.data);
-        this.$router.push('/');
-        this.$forceUpdate();
-        // window.location.reload();
+        this.$router.go();
       })
       .catch(err => {
         console.log(err);
