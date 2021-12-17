@@ -92,7 +92,7 @@ export default {
             })
         },
         modify(member) {
-          this.$router.push({path : '/MemberUpdatePage', query : {memberIdx : member.memberIdx}});
+          this.$router.push({path : '/memberupdatepage', query : {memberIdx : member.memberIdx}});
         },
     }
     //  data() {
