@@ -8,36 +8,36 @@
         <div class="col-sm-8">
           <input type="text" class="form-control" id="staticEmail" placeholder="이름을 입력해주세요.">
         </div>
-      </div>
+      </div><br>
 
       <div class="form-group row">
         <label for="exampleInputPassword1" class="col-sm-4 col-form-label">성별</label>
         <div class="col-sm-8">
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="성별을 입력해주세요.">
         </div>
-      </div>
+      </div><br>
 
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-4 col-form-label">이메일</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="staticEmail" placeholder="이메일을 입력해주세요.">
+          <input type="text" class="form-control" id="staticEmail" placeholder="example@naver.com">
         </div>
-      </div>
+      </div><br>
     
       <div class="d-grid gap-2">
         <button class="btn btn-lg btn-primary" type="button">아이디 찾기</button>
-      </div>
+      </div><br>
 
-      <div class="container px-4">
-        <div class="row justify-content-center row gx-4">
+      <div class="container px-5">
+        <div class="row justify-content-center row gx-5">
           <div class="col-4">
-            <router-link to="/loginpage"><button type="button" class="btn btn-primary">로그인 하기</button></router-link>
+            <router-link to="/loginpage"><button type="button" class="btn btn-primary" style="padding: 6px 31px">로그인 하기</button></router-link>
           </div>
           <div class="col-4">
-            <router-link to="/findpassword"><button type="button" class="btn btn-primary">비밀번호 찾기</button></router-link>
+            <router-link to="/findpassword"><button type="button" class="btn btn-primary" style="padding: 6px 21px">비밀번호 찾기</button></router-link>
           </div>
           <div class="col-4">
-            <router-link to="/signuppage"><button type="button" class="btn btn-primary">회원가입</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary" style="padding: 6px 51px">회원가입</button></router-link>
           </div>
         </div>
       </div>
