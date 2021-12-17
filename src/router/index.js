@@ -41,10 +41,6 @@ const routes = [
     component: () => import('../views/Member/MemberInfo.vue')
   },
   {
-    path: '/memberupdate',
-    component: () => import('../views/Member/UpdatePage.vue')
-  },
-  {
     path: '/findid',
     component: () => import('../views/Member/LoginId.vue')
   },
@@ -60,7 +56,12 @@ const routes = [
     path: '/contactuspage',
     name: 'Contactus',
     component: () => import('../views/Member/Contactus.vue')
-  }
+  },
+  {
+    path: '/memberupdatepage',
+    component: () => import('../views/Member/MemberUpdate.vue')
+  },
+
 ]
 
 const router = createRouter({
