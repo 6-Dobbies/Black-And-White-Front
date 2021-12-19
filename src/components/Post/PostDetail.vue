@@ -4,7 +4,7 @@
         <div class="form-group">
             <label class="col-form-label mt-4" for="inputDefault">Title</label>
             <input
-                v-model="title"
+                v-model="post.title"
                 type="text"
                 class="form-control"
                 placeholder="제목을 입력하세요"
@@ -35,7 +35,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
     name: 'PostDetail',

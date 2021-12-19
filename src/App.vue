@@ -51,13 +51,13 @@
   <!-- <button @click="getData">테스트</button>
   <button @click="getDel">테스트(manager)</button> -->
   <BAWFooter/>
-  <router-view/>
+  <router-view/>  
 </template>
 
 <script>
 import BAWFooter from './components/common/BAWFooter.vue';
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
   name: "App",

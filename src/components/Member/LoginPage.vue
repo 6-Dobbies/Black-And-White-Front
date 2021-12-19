@@ -13,7 +13,7 @@
       <div class="form-group row">
         <label for="pw" class="form-label mt-4">비밀번호</label>
         <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요." id="pw" v-model="form.pw" required>
-      </div>
+      </div><br><br>
     
       <div class="d-grid gap-2">
         <button class="btn btn-lg btn-primary" @click="[submitForm(), this.$router.replace('/')]">로그인</button>
@@ -25,10 +25,10 @@
             <router-link to="/findpassword"><button type="button" class="btn btn-primary">비밀번호 찾기</button></router-link>
           </div>
           <div class="col-4">
-            <router-link to="/findid"><button type="button" class="btn btn-primary">아이디 찾기</button></router-link>
+            <router-link to="/findid"><button type="button" class="btn btn-primary" style="padding: 6px 21px">아이디 찾기</button></router-link>
           </div>
           <div class="col-4">
-            <router-link to="/signuppage"><button type="button" class="btn btn-primary">회원가입</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary" style="padding: 6px 30px">회원가입</button></router-link>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
   name : 'LoginPage',

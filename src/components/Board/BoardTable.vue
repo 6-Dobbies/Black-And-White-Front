@@ -141,7 +141,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
     name: 'BoardTable',
@@ -160,7 +160,7 @@ export default {
             .catch(error => console.log(error));
         },
         detail(post) {
-            this.$router.push({path : '/postdetail', params : {postIdx : post.postIdx}});            
+            this.$router.push({path : '/postdetail', query : {postIdx : post.postIdx}});            
         }
     },
     mounted() {

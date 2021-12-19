@@ -39,7 +39,7 @@ const routes = [
   {
     path: '/memberdetail',
     component: () => import('../views/Member/MemberInfo.vue')
-  },
+  }, 
   {
     path: '/findid',
     component: () => import('../views/Member/LoginId.vue')
