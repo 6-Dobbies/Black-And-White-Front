@@ -1,26 +1,23 @@
 <template>
 <div class="bawbody">
-  <form class="container h-100">
+  <div class="mt-4">
+    <router-link to="/"><legend>BLACK AND WHITE</legend></router-link>
+    <h1 style="text-align: center">비밀번호 찾기</h1>
+  </div>
+  <form @submit.prevent="submitForm" class="container h-100">
     <fieldset>
-    <legend><h1>비밀번호 찾기</h1></legend>
       <div class="form-group row">
-        <label for="staticEmail" class="col-sm-4 col-form-label">아이디</label>
+        <label for="memberId" class="col-sm-4 col-form-label">아이디</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="staticEmail" placeholder="아이디를 입력해주세요.">
+          <input type="text" class="form-control" id="memberId" placeholder="아이디를 입력해주세요" v-model="form.memberId" required>
         </div>
-      </div><br>
-
-      <div class="form-group row">
-        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">이메일</label>
-        <div class="col-sm-8">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="이메일을 입력해주세요.">
-        </div>
+        <!-- <small v-if="condition[0] == true">아이디를 입력해주세요..</small> -->
       </div><br>
 
       <div class="form-group row">
       <label for="pwQuestion" class="col-sm-4 col-form-label">비밀번호 찾기 질문</label>
        <div class="col-sm-8"> 
-        <select class="form-select" id="pwQuestion" v-model="pwQuestion" required>
+        <select class="form-select" id="pwQuestion" v-model="form.pwQuestion" required>
           <option value="" disabled selected>질문을 선택해주세요.</option>
           <option>태어난 도시는 어디인가요?</option>
           <option>가장 기억에 남는 장소는 어디인가요?</option>
@@ -28,20 +25,19 @@
           <option>가장 행복했던 순간은 언제인가요?</option>
         </select>
        </div>
-      <small v-if="condition2[3] == true">질문을 선택해주세요..</small>
+       <!-- <small v-if="condition[1] == true">질문을 선택해주세요..</small> -->
       </div><br>
 
       <div class="form-group row">
-        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">본인확인질문</label>
+        <label for="pwAnswer" class="col-sm-4 col-form-label">비밀번호 찾기 답변</label>
         <div class="col-sm-8">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="본인확인 답을 입력해주세요.">
+          <input type="text" class="form-control" id="pwAnswer" placeholder="답을 입력해주세요" v-model="form.pwAnswer" required>
         </div>
+      <!-- <small v-if="condition[2] == true">답을 입력해주세요..</small> -->
       </div><br>
-
-
     
       <div class="d-grid gap-2">
-        <button class="btn btn-lg btn-primary" type="button">비밀번호찾기</button>
+        <button class="btn btn-lg btn-primary" @click="[submitForm(), this.$router.replace('/loginpage')]">비밀번호찾기</button>
       </div><br>
 
       <div class="container px-5">
@@ -70,174 +66,66 @@ export default {
   name: "FindPassword",
   data() {
     return {
-      condition : [false,false,false],
-      condition2 : [false,false,false,false,false,false,false,false,false],
-      memberId : "",
-      pw : "",
-      pwQuestion : "",
-      pwAnswer : "",
-      nickname : "",
-      birthYear : "",
-      gender : "",
-      email : "",
-      tier : "",
-      region : "",
+      // condition : [false,false,false,false,false,false,false,false,false],
+      form : {
+        memberId : "",
+        pwQuestion : "",
+        pwAnswer : "",
+      },
     }
   },
 
-  watch : {
-    nickname(a) {
+  // watch : {
+  //   memberId(a) {
+  //     if (a == "") {
+  //       this.condition[0] = true;
+  //     } else {
+  //       this.condition[0] = false;
+  //     }
+  //   },
 
-      if (a == "") {
-        this.condition2[0] = true;
-      } else {
-        this.condition2[0] = false;
-      }  
+  //   pwQuestion(a) {
+  //     if (a == "") {
+  //       this.condition[1] = true;
+  //     } else {
+  //       this.condition[1] = false;
+  //     }
+  //   },
 
-      axios.post('/members/check/nickname',{
-        nickname : a,
-      })
-      .then(res => {
-        if (res.data == false) {
-          this.condition[0] = true;
-        } else {
-          this.condition[0] = false;
-        }
-      })
-      .catch(error => console.log(error));
-    },
-
-    memberId(a) {
-
-      if (a == "") {
-        this.condition2[1] = true;
-      } else {
-        this.condition2[1] = false;
-      }  
-
-      axios.post('/members/check/memberid', {
-        memberId : a,
-      })
-      .then(res => {
-        if (res.data == false) {
-          this.condition[1] = true;
-        } else {
-          this.condition[1] = false;
-        } 
-      })
-      .catch(error => console.log(error));
-    },
-    
-    email(a) {
-
-      let regEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-      
-      if (a == "" || regEmail.test(a) == false) {
-        this.condition2[7] = true;
-      } else {
-        this.condition2[7] = false;
-      }
-
-      axios.post('/members/check/email', {
-        email : a,
-      })
-      .then(res => {
-        console.log(res.data);
-        if (res.data == false) {
-          this.condition[2] = true;
-        } else {
-          this.condition[2] = false;
-        }
-      })
-      .catch(error => console.log(error));
-    },
-
-    pw(a) {
-
-      if (a == "") {
-        this.condition2[2] = true;
-      } else {
-        this.condition2[2] = false;
-      }
-    },
-
-    pwQuestion(a) {
-
-      if (a == "") {
-        this.condition2[3] = true;
-      } else {
-        this.condition2[3] = false;
-      }
-    },
-
-    pwAnswer(a) {
-
-      if (a == "") {
-        this.condition2[4] = true;
-      } else {
-        this.condition2[4] = false;
-      }
-    },
-
-    birthYear(a) {
-
-      if (a == "") {
-        this.condition2[5] = true;
-      } else {
-        this.condition2[5] = false;
-      }
-    },
-
-    gender(a) {
-
-      if (a == "") {
-        this.condition2[6] = true;
-      } else {
-        this.condition2[6] = false;
-      }
-    },
-
-    region(a) {
-
-      if (a == "") {
-        this.condition2[8] = true;
-      } else {
-        this.condition2[8] = false;
-      }
-    }
-  },
+  //   pwAnswer(a) {
+  //     if (a == "") {
+  //       this.condition[2] = true;
+  //     } else {
+  //       this.condition[2] = false;
+  //     }
+  //   },
+  // },
 
   methods : {
     submitForm() {
-      
-      axios.post("/member",{
-        data : 
-          {
-            memberId : this.memberId,
-            pw : this.pw,
-            pwQuestion : this.pwQuestion,
-            pwAnswer : this.pwAnswer,
-            nickname : this.nickname,
-            birthYear : this.birthYear,
-            gender : this.gender,
-            email : this.email,
-            region : this.region,
-            tier : this.tier
-          },
-          "success": true,
-          "code": 0,
-          "message": "성공"
-        })
+      if(doubleSubmitCheck()) return;
+      axios.patch("/email", JSON.stringify(this.form),
+        { headers: { 'Content-Type': 'application/json' }})
       .then(res => {
         console.log(res.data);
-        alert("회원가입이 완료되었습니다.");
-        this.$router.push('/');
+        alert(res.data.data);
+        this.$router.go();
       })
       .catch(err => {
         console.log(err);
       })
     },
   },
+}
+
+var doubleSubmitFlag = false;
+function doubleSubmitCheck(){
+    if(doubleSubmitFlag){
+        return doubleSubmitFlag;
+    }else{
+        doubleSubmitFlag = true;
+        return false;
+    }
 }
 </script>
 
