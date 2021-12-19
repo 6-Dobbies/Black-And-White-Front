@@ -2,6 +2,7 @@
 <div class="bawbody">
   <div class="mt-4">
     <router-link to="/"><legend>BLACK AND WHITE</legend></router-link>
+    <h1 style="text-align: center">로그인</h1>
   </div>
   <form @submit="submitForm" class="mpcontainer h-100">
     <fieldset>
@@ -39,7 +40,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:8079";
+axios.defaults.baseURL="http://localhost:80";
 
 export default {
   name : 'LoginPage',

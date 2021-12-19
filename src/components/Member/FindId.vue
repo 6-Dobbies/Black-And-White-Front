@@ -1,43 +1,35 @@
 <template>
 <div class="bawbody">
-  <form class="container h-100">
+  <div class="mt-4">
+    <router-link to="/"><legend>BLACK AND WHITE</legend></router-link>
+    <h1 style="text-align: center">아이디 찾기</h1>
+  </div>
+  <form @submit="submitForm" class="mpcontainer h-100">
     <fieldset>
-    <legend><h1>아이디 찾기</h1></legend>
       <div class="form-group row">
-        <label for="staticEmail" class="col-sm-4 col-form-label">이름</label>
-        <div class="col-sm-8">
-          <input type="text" class="form-control" id="staticEmail" placeholder="이름을 입력해주세요.">
-        </div>
-      </div><br>
+        <label for="email" class="form-label mt-4">이메일</label>
+        <input type="text" class="form-control" id="email" placeholder="example@naver.com" v-model="form.email" required>
+      </div>
 
       <div class="form-group row">
-        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">성별</label>
-        <div class="col-sm-8">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="성별을 입력해주세요.">
-        </div>
-      </div><br>
-
-      <div class="form-group row">
-        <label for="staticEmail" class="col-sm-4 col-form-label">이메일</label>
-        <div class="col-sm-8">
-          <input type="text" class="form-control" id="staticEmail" placeholder="example@naver.com">
-        </div>
-      </div><br>
+        <label for="birthYear" class="form-label mt-4">출생연도</label>
+        <input type="text" class="form-control" id="birthYear" placeholder="숫자 4자리를 입력하세요" v-model="form.birthYear" required>
+      </div><br><br>
     
       <div class="d-grid gap-2">
-        <button class="btn btn-lg btn-primary" type="button">아이디 찾기</button>
-      </div><br>
+        <button class="btn btn-lg btn-primary" @click="[submitForm(), this.$router.replace('/loginpage')]">아이디 찾기</button>
+      </div>
 
-      <div class="container px-5">
-        <div class="row justify-content-center row gx-5">
+      <div class="container px-4" style="padding-top: 50px;">
+        <div class="row justify-content-center row gx-4">
           <div class="col-4">
-            <router-link to="/loginpage"><button type="button" class="btn btn-primary" style="padding: 6px 31px">로그인 하기</button></router-link>
+            <router-link to="/loginpage"><button type="button" class="btn btn-primary">로그인 하기</button></router-link>
           </div>
           <div class="col-4">
-            <router-link to="/findpassword"><button type="button" class="btn btn-primary" style="padding: 6px 21px">비밀번호 찾기</button></router-link>
+            <router-link to="/findpassword"><button type="button" class="btn btn-primary" style="padding: 6px 15px">비밀번호 찾기</button></router-link>
           </div>
           <div class="col-4">
-            <router-link to="/signuppage"><button type="button" class="btn btn-primary" style="padding: 6px 51px">회원가입</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary" style="padding: 6px 30px">회원가입</button></router-link>
           </div>
         </div>
       </div>
@@ -47,8 +39,32 @@
 </template>
 
 <script>
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:80";
+
 export default {
   name : 'FindId',
+  data() {
+    return {
+      form : {
+        email : "",
+        birthYear : "",
+      },
+    }
+  },
+  methods : {
+    submitForm() {
+      axios.post("/members/find/memberid", JSON.stringify(this.form),
+        { headers: { 'Content-Type': 'application/json' }})
+      .then(res => {
+        console.log(res.data);
+        alert("회원님의 id는 " + res.data.data + "입니다:)");
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    },
+  },
 }
 </script>
 
