@@ -1,12 +1,11 @@
 <template>
   <div class="bawhead">
-    <h6>{{name}}님, 환영합니다💜</h6>
+    <!-- <h6>{{name}}님, 환영합니다💜</h6> -->
     <br>
     <h1 style="color: #dee2e6">자유 게시판</h1>
     <hr class="bawline" style="height: 5px;">
-    <BoardTable msg="메세지???"/>
   </div>
-  
+  <BoardTable msg="메세지???"/>
 </template>
 
 
