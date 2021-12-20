@@ -247,8 +247,8 @@ export default {
             pwAnswer : this.pwAnswer,
             nickname : this.nickname,
             birthYear : this.birthYear,
-            gender : this.gender,
             email : this.email,
+            gender : this.gender,
             region : this.region,
             tier : this.tier
           },
@@ -263,7 +263,7 @@ export default {
       })
       .catch(err => {
         console.log(err);
-      })
+      });
     },
   },
 }
