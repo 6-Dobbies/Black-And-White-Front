@@ -42,15 +42,9 @@
 
       <div style="padding-top: 50px;">
         <div class="three">
-          <div>
             <router-link to="/loginpage"><button type="button" class="btn btn-primary three-button">로그인 하기</button></router-link>
-          </div>
-          <div>
             <router-link to="/findid"><button type="button" class="btn btn-primary three-button">아이디 찾기</button></router-link>
-          </div>
-          <div>
             <router-link to="/signuppage"><button type="button" class="btn btn-primary three-button">회원가입</button></router-link>
-          </div>
         </div>
       </div>
     </fieldset>
@@ -103,7 +97,7 @@ export default {
 
   methods : {
     submitForm() {
-      if(doubleSubmitCheck()) return;
+      // if(doubleSubmitCheck()) return;
       axios.patch("/email", JSON.stringify(this.form),
         { headers: { 'Content-Type': 'application/json' }})
       .then(res => {
@@ -118,15 +112,15 @@ export default {
   },
 }
 
-var doubleSubmitFlag = false;
-function doubleSubmitCheck(){
-    if(doubleSubmitFlag){
-        return doubleSubmitFlag;
-    }else{
-        doubleSubmitFlag = true;
-        return false;
-    }
-}
+// var doubleSubmitFlag = false;
+// function doubleSubmitCheck(){
+//     if(doubleSubmitFlag){
+//         return doubleSubmitFlag;
+//     }else{
+//         doubleSubmitFlag = true;
+//         return false;
+//     }
+// }
 </script>
 
 <style>
