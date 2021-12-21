@@ -1,5 +1,5 @@
 <template>
-  <form @submit="submitForm" autocomplete="off">
+  <form @submit.prevent="submitForm" autocomplete="off">
     <div class="bawbody">
       <table class="bawtable" v-if="member.memberIdx">
         <tr>

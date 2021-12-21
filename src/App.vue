@@ -27,7 +27,7 @@
                 <li class="nav-item dropdown">
                 <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item">♟ Chess</a>
+                  <router-link to="/chessgamepage" style="text-decoration: none;"><a class="dropdown-item">♟ Chess</a></router-link>
                   <a class="dropdown-item">🃏 Card</a>
                 </div>
                 </li>

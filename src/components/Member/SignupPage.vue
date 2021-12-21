@@ -4,7 +4,7 @@
   <div class="mt-4">
     <router-link to="/"><legend style="margin-top : 30px">회원가입</legend></router-link>
   </div>
-  <form @submit="submitForm" class="mpcontainer h-100" autocomplete="off">
+  <form @submit.prevent="submitForm" class="mpcontainer h-100" autocomplete="off">
     <div class="form-group row">
       <label for="nickname" class="form-label mt-4">닉네임</label>
       <input type="text" class="form-control" placeholder="닉네임을 입력해주세요." id="nickname" v-model="nickname" required>
