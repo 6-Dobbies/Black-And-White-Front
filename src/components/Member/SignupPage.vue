@@ -256,9 +256,6 @@ export default {
         "code": 0,
         "message": "성공"
       })
-      // .then(res => {
-      //   axios.post("/members/tier/" + res.data.data)
-      // })
       .then(res => {
         console.log(res.data);
         axios.post("/members/tier/" + res.data.data)

@@ -22,15 +22,9 @@
 
       <div style="padding-top: 50px;">
         <div class="three">
-          <div>
             <router-link to="/loginpage"><button type="button" class="btn btn-primary three-button">로그인 하기</button></router-link>
-          </div>
-          <div>
             <router-link to="/findpassword"><button type="button" class="btn btn-primary three-button">비밀번호 찾기</button></router-link>
-          </div>
-          <div>
             <router-link to="/signuppage"><button type="button" class="btn btn-primary three-button">회원가입</button></router-link>
-          </div>
         </div>
       </div>
     </fieldset>

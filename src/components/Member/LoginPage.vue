@@ -22,15 +22,9 @@
 
       <div style="padding-top: 50px;">
         <div class="three">
-          <div>
             <router-link to="/findpassword"><button type="button" class="btn btn-primary three-button">비밀번호 찾기</button></router-link>
-          </div>
-          <div>
             <router-link to="/findid"><button type="button" class="btn btn-primary three-button">아이디 찾기</button></router-link>
-          </div>
-          <div>
             <router-link to="/signuppage"><button type="button" class="btn btn-primary three-button">회원가입</button></router-link>
-          </div>
         </div>
       </div>
     </fieldset>
@@ -54,11 +48,11 @@ export default {
   },
   methods : {
     submitForm() {
-      axios.post("/members/login", JSON.stringify(this.form),
+      axios.post('/members/login', JSON.stringify(this.form),
         { headers: { 'Content-Type': 'application/json' }})
       .then(res => {
         console.log(res.data);
-        localStorage.setItem("token", res.data.data);
+        localStorage.setItem('token', res.data.data);
         this.$router.go();
       })
       .catch(err => {
