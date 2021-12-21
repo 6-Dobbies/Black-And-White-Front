@@ -252,12 +252,19 @@ export default {
             region : this.region,
             tier : this.tier
           },
-          "success": true,
-          "code": 0,
-          "message": "성공"
-        })
+        "success": true,
+        "code": 0,
+        "message": "성공"
+      })
+      // .then(res => {
+      //   axios.post("/members/tier/" + res.data.data)
+      // })
       .then(res => {
         console.log(res.data);
+        axios.post("/members/tier/" + res.data.data)
+        .then(res => {
+          console.log(res.data.data.tier);
+        })
         alert("회원가입이 완료되었습니다.");
         this.$router.push('/');
       })
