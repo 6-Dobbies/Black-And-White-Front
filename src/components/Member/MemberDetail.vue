@@ -3,43 +3,43 @@
         <table class="bawtable" v-if="member.memberIdx">
             <tr>
                 <th scope="row">번호</th>
-                <input class="form-control" id="memberIdx" type="text" :placeholder="member.memberIdx" readonly="">
+                <input class="form-control mdinput" id="memberIdx" type="text" :placeholder="member.memberIdx" readonly="">
             </tr>
             <tr>
                 <th scope="row">아이디</th>
-                <input class="form-control" id="memberId" type="text" :placeholder="member.memberId" readonly="">
+                <input class="form-control mdinput" id="memberId" type="text" :placeholder="member.memberId" readonly="">
             </tr>
             <tr>
                 <th scope="row">닉네임</th>
-                <input class="form-control" id="nickname" type="text" :placeholder="member.nickname" readonly="">
+                <input class="form-control mdinput" id="nickname" type="text" :placeholder="member.nickname" readonly="">
             </tr>
             <tr>
                 <th scope="row">이메일</th>
-                <input class="form-control" id="email" type="text" :placeholder="member.email" readonly="">
+                <input class="form-control mdinput" id="email" type="text" :placeholder="member.email" readonly="">
             </tr>
             <tr>
                 <th scope="row">출생연도</th>
-                <input class="form-control" id="birthYear" type="text" :placeholder="member.birthYear" readonly="">
+                <input class="form-control mdinput" id="birthYear" type="text" :placeholder="member.birthYear" readonly="">
             </tr>
             <tr>
                 <th scope="row">성별</th>
-                <input class="form-control" id="gender" type="text" :placeholder="member.gender" readonly="">
+                <input class="form-control mdinput" id="gender" type="text" :placeholder="member.gender" readonly="">
             </tr>
             <tr>
                 <th scope="row">지역</th>
-                <input class="form-control" id="region" type="text" :placeholder="member.region" readonly="">
+                <input class="form-control mdinput" id="region" type="text" :placeholder="member.region" readonly="">
             </tr>
             <tr>
                 <th scope="row">전적</th>
-                <input class="form-control" id="tier" type="text" :placeholder="member.tier" readonly="">
+                <input class="form-control mdinput" id="tier" type="text" :placeholder="member.tier" readonly="">
             </tr>
             <tr>
                 <th scope="row">권한</th>
-                <input class="form-control" id="role" type="text" :placeholder="member.role[0]" readonly="">
+                <input class="form-control mdinput" id="role" type="text" :placeholder="member.role[0]" readonly="">
             </tr>
             <tr>
                 <th scope="row">탈퇴</th>
-                <input class="form-control" id="del" type="text" :placeholder="member.del" readonly="">
+                <input class="form-control mdinput" id="del" type="text" :placeholder="member.del" readonly="">
             </tr>
         </table>
         <br><br>
@@ -90,7 +90,7 @@ export default {
 
 <style>
 
-input {
+.mdinput {
   margin : 10px;
   /* cursor: not-allowed; */
 }
