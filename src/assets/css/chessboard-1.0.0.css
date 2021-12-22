@@ -1,6 +1,6 @@
 /*! chessboard.js v1.0.0 | (c) 2019 Chris Oakman | MIT License chessboardjs.com/license */
 
-.clearfix-7da63 {
+/* .clearfix-7da63 {
   clear: both;
 }
 
@@ -13,7 +13,7 @@
   float: left;
   position: relative;
 
-  /* disable any native browser highlighting */
+  disable any native browser highlighting
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -51,4 +51,4 @@
 .numeric-fc462 {
   top: 2px;
   left: 2px;
-}
+} */
