@@ -61,6 +61,10 @@ const routes = [
     path: '/memberupdatepage',
     component: () => import('../views/Member/MemberUpdate.vue')
   },
+  {
+    path: '/chessgamepage',
+    component: () => import('../views/Chess/Game.vue')
+  },
 ]
 
 const router = createRouter({

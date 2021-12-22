@@ -4,7 +4,7 @@
   <div class="mt-4">
     <router-link to="/"><legend style="margin-top : 30px">회원가입</legend></router-link>
   </div>
-  <form @submit="submitForm" class="mpcontainer h-100" autocomplete="off">
+  <form @submit.prevent="submitForm" class="mpcontainer h-100" autocomplete="off">
     <div class="form-group row">
       <label for="nickname" class="form-label mt-4">닉네임</label>
       <input type="text" class="form-control" placeholder="닉네임을 입력해주세요." id="nickname" v-model="nickname" required>
@@ -247,23 +247,27 @@ export default {
             pwAnswer : this.pwAnswer,
             nickname : this.nickname,
             birthYear : this.birthYear,
-            gender : this.gender,
             email : this.email,
+            gender : this.gender,
             region : this.region,
             tier : this.tier
           },
-          "success": true,
-          "code": 0,
-          "message": "성공"
-        })
+        "success": true,
+        "code": 0,
+        "message": "성공"
+      })
       .then(res => {
         console.log(res.data);
+        axios.post("/members/tier/" + res.data.data)
+        .then(res => {
+          console.log(res.data.data.tier);
+        })
         alert("회원가입이 완료되었습니다.");
         this.$router.push('/');
       })
       .catch(err => {
         console.log(err);
-      })
+      });
     },
   },
 }

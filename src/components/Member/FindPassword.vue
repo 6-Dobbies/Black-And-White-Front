@@ -4,7 +4,7 @@
     <router-link to="/"><legend>BLACK AND WHITE</legend></router-link>
     <h1 style="text-align: center">비밀번호 찾기</h1>
   </div>
-  <form @submit.prevent="submitForm" class="container h-100">
+  <form @submit.prevent="submitForm" class="mpcontainer h-100" style="margin-top: 50px">
     <fieldset>
       <div class="form-group row">
         <label for="memberId" class="col-sm-4 col-form-label">아이디</label>
@@ -38,19 +38,13 @@
     
       <div class="d-grid gap-2">
         <button class="btn btn-lg btn-primary" @click="[submitForm(), this.$router.replace('/loginpage')]">비밀번호찾기</button>
-      </div><br>
+      </div>
 
-      <div class="container px-5">
-        <div class="row justify-content-center row gx-5">
-          <div class="col-4">
-            <router-link to="/loginpage"><button type="button" class="btn btn-primary" style="padding: 6px 21px">로그인 하기</button></router-link>
-          </div>
-          <div class="col-4">
-            <router-link to="/findid"><button type="button" class="btn btn-primary" style="padding: 6px 21px">아이디 찾기</button></router-link>
-          </div>
-          <div class="col-4">
-            <router-link to="/signuppage"><button type="button" class="btn btn-primary" style="padding: 6px 41px">회원가입</button></router-link>
-          </div>
+      <div style="padding-top: 50px;">
+        <div class="three">
+            <router-link to="/loginpage"><button type="button" class="btn btn-primary three-button">로그인 하기</button></router-link>
+            <router-link to="/findid"><button type="button" class="btn btn-primary three-button">아이디 찾기</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary three-button">회원가입</button></router-link>
         </div>
       </div>
     </fieldset>
@@ -103,7 +97,7 @@ export default {
 
   methods : {
     submitForm() {
-      if(doubleSubmitCheck()) return;
+      // if(doubleSubmitCheck()) return;
       axios.patch("/email", JSON.stringify(this.form),
         { headers: { 'Content-Type': 'application/json' }})
       .then(res => {
@@ -118,15 +112,15 @@ export default {
   },
 }
 
-var doubleSubmitFlag = false;
-function doubleSubmitCheck(){
-    if(doubleSubmitFlag){
-        return doubleSubmitFlag;
-    }else{
-        doubleSubmitFlag = true;
-        return false;
-    }
-}
+// var doubleSubmitFlag = false;
+// function doubleSubmitCheck(){
+//     if(doubleSubmitFlag){
+//         return doubleSubmitFlag;
+//     }else{
+//         doubleSubmitFlag = true;
+//         return false;
+//     }
+// }
 </script>
 
 <style>
@@ -136,21 +130,30 @@ function doubleSubmitCheck(){
 }
 
 .mpcontainer {
+    /* justify-content: center; */
     width: 500px;
 }
 
 legend {
   text-align: center;
-  font-size: 40px;
   height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
 label {
   padding-top: 10px;
+}
+
+.three {
+  display: flex;
+  justify-content: space-between;
+}
+
+.three-button {
+  width: 135px;
 }
 
 small {

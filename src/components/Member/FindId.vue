@@ -20,17 +20,11 @@
         <button class="btn btn-lg btn-primary" @click="[submitForm(), this.$router.replace('/loginpage')]">아이디 찾기</button>
       </div>
 
-      <div class="container px-4" style="padding-top: 50px;">
-        <div class="row justify-content-center row gx-4">
-          <div class="col-4">
-            <router-link to="/loginpage"><button type="button" class="btn btn-primary">로그인 하기</button></router-link>
-          </div>
-          <div class="col-4">
-            <router-link to="/findpassword"><button type="button" class="btn btn-primary" style="padding: 6px 15px">비밀번호 찾기</button></router-link>
-          </div>
-          <div class="col-4">
-            <router-link to="/signuppage"><button type="button" class="btn btn-primary" style="padding: 6px 30px">회원가입</button></router-link>
-          </div>
+      <div style="padding-top: 50px;">
+        <div class="three">
+            <router-link to="/loginpage"><button type="button" class="btn btn-primary three-button">로그인 하기</button></router-link>
+            <router-link to="/findpassword"><button type="button" class="btn btn-primary three-button">비밀번호 찾기</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary three-button">회원가입</button></router-link>
         </div>
       </div>
     </fieldset>
@@ -90,6 +84,15 @@ legend {
 
 label {
   padding-top: 10px;
+}
+
+.three {
+  display: flex;
+  justify-content: space-between;
+}
+
+.three-button {
+  width: 135px;
 }
 
 </style>

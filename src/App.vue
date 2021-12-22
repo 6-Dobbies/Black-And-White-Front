@@ -12,10 +12,6 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
-                <router-link to="/" style="text-decoration: none;">
-                  <li class="nav-item"><a class="nav-link active">Home<span class="visually-hidden">(current)</span></a></li>
-                </router-link>
-
                 <li class="nav-item dropdown">
                 <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Board</a>
                 <div class="dropdown-menu">
@@ -27,7 +23,7 @@
                 <li class="nav-item dropdown">
                 <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item">♟ Chess</a>
+                  <router-link to="/chessgamepage" style="text-decoration: none;"><a class="dropdown-item">♟ Chess</a></router-link>
                   <a class="dropdown-item">🃏 Card</a>
                 </div>
                 </li>
@@ -39,7 +35,8 @@
               <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-secondary" v-if="isToken" v-show="isToken == true" @click="[logout(), this.$router.push('/')]">로그아웃</button>
                 <router-link to="/loginpage" v-else><button type="button" class="btn btn-secondary" v-show="isToken == false">로그인</button></router-link>
-                <router-link to="/signuppage"><button type="button" class="btn btn-secondary">회원가입</button></router-link>
+                <button type="button" class="btn btn-secondary" v-if="isToken" v-show="isToken == true">마이페이지</button>
+                <router-link to="/signuppage" v-else><button type="button" class="btn btn-secondary" v-show="isToken == false">회원가입</button></router-link>
               </div>
             </div>
             </div>

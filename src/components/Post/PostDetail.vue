@@ -1,33 +1,20 @@
 <template>
-    <div>
+    <div class="bawbody">
         <form class="container h-100">
-        <div class="form-group">
-            <label class="col-form-label mt-4" for="inputDefault">Title</label>
-            <input
-                v-model="post.title"
-                type="text"
-                class="form-control"
-                placeholder="제목을 입력하세요"
-                id="inputDefault"
-                readonly="readonly">           
+        <div class="card border-primary mb-3">
+            <div class="card-header">자유게시판</div>
+            <div class="card-body">
+                <input class="form-control" v-model="post.title" disabled>
+                <textarea class="form-control bawtextarea" v-model="post.content" disabled></textarea>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleTextarea" class="col-form-label mt-4">Content</label>
-            <textarea
-                v-model="post.content" 
-                class="form-control"
-                placeholder="내용을 입력하세요"
-                id="exampleTextarea"
-                rows="10"
-                readonly="readonly">
-            </textarea>            
-        </div>
-        
-        <br><br>
-        <div class="btn-group" role="group" aria-label="Basic example">
-        <button @click="modified" class="btn btn-secondary">수정</button>
-        <button @click="deleted" class="btn btn-secondary">삭제</button>
-        <button @click="list" class="btn btn-secondary">목록</button>
+
+        <div style="padding-top: 50px;">
+            <div class="three">
+                <router-link to="/"><button type="button" class="btn btn-primary three-button">수정</button></router-link>
+                <router-link to="/"><button type="button" class="btn btn-primary three-button">삭제</button></router-link>
+                <router-link to="/"><button type="button" class="btn btn-primary three-button">목록</button></router-link>
+            </div>
         </div>
         </form>
     </div>
@@ -72,3 +59,21 @@ export default {
     },
 }
 </script>
+
+<style>
+.bawtextarea {
+    resize: none;
+    height: 300px;
+    margin-top: 5px;
+}
+
+.three {
+  display: flex;
+  justify-content: space-between;
+}
+
+.three-button {
+  min-width: 140px;
+}
+
+</style>
