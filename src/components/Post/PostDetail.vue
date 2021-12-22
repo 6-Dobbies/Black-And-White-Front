@@ -35,7 +35,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
     name: 'PostDetail',
@@ -43,6 +43,9 @@ export default {
         return {
             post: "",                
         }
+    },
+    created() {
+        this.getData();
     },
     methods: {            
         getData() {
@@ -52,9 +55,20 @@ export default {
             })
             .catch(error => console.log(error));
         },
-    },
+        deleted() {
+            axios.patch('/posts/' + this.$route.query.postIdx)
+            .then(res => {
+                this.post = res.data.data;
+            })
+        },
+        list(){
+            this.$router.push({
+                path: '/board'
+            })
+        }
+    },    
     mounted() {
         this.getData();
-    }        
+    },
 }
 </script>
