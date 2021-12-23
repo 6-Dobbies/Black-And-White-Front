@@ -1,38 +1,35 @@
 <template>
 
-<div class="bawbody">
-  <div class="mt-4">
-    <router-link to="/"><legend style="margin-top : 30px">회원가입</legend></router-link>
-  </div>
+<div class="bawbody">  
   <form @submit.prevent="submitForm" class="mpcontainer h-100" autocomplete="off">
     <div class="form-group row">
       <label for="nickname" class="form-label mt-4">닉네임</label>
-      <input type="text" class="form-control" placeholder="닉네임을 입력해주세요." id="nickname" v-model="nickname" required>
+      <input type="text" class="form-control" placeholder="닉네임을 입력해주세요." id="nickname" v-model="nickname" required disabled>
       <small v-if="condition[0] == true">이미 사용 중인 닉네임입니다..</small>
       <small v-if="condition2[0] == true">닉네임을 입력해주세요..</small>
     </div>
 
     <div class="form-group row">
       <label for="memberId" class="form-label mt-4">아이디</label>
-      <input type="text" class="form-control" placeholder="아이디를 입력해주세요." id="memberId" v-model="memberId" required>
+      <input type="text" class="form-control" placeholder="아이디를 입력해주세요." id="memberId" v-model="memberId" required disabled>
       <small v-if="condition[1] == true">이미 사용 중인 아이디입니다..</small>
       <small v-if="condition2[1] == true">아이디를 입력해주세요..</small>
     </div>
 
     <div class="form-group row">
       <label for="pw" class="form-label mt-4">비밀번호</label>
-      <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요." id="pw" v-model="pw" required>
+      <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요." id="pw" v-model="pw" required disabled>
       <small v-if="condition2[2] == true">비밀번호를 입력해주세요..</small>
     </div>
 
     <div class="form-group row">
       <label for="birthYear" class="form-label mt-4">태어난 연도</label>
-      <input type="text" class="form-control" placeholder="태어난 연도를 입력해주세요." id="birthYear" v-model="birthYear" required>
+      <input type="text" class="form-control" placeholder="태어난 연도를 입력해주세요." id="birthYear" v-model="birthYear" required disabled>
       <small v-if="condition2[5] == true">태어난 연도를 입력해주세요..</small>
     </div>
 
     <div class="form-group row">
-      <input type="hidden" class="form-control" id="tier" value="0">
+      <input type="hidden" class="form-control" id="tier" value="0" disabled>
     </div>
 
     <div class="form-group row">
@@ -49,7 +46,7 @@
 
     <div class="form-group row">
       <label for="pwAnswer" class="form-label mt-4">비밀번호 찾기 답변 </label>
-      <input type="text" class="form-control" placeholder="질문에 대한 답을 입력해주세요." id="pwAnswer" v-model="pwAnswer" required>
+      <input type="text" class="form-control" placeholder="질문에 대한 답을 입력해주세요." id="pwAnswer" v-model="pwAnswer" required disabled>
       <small v-if="condition2[4] == true">답을 입력해주세요..</small>
     </div>
 
@@ -57,15 +54,15 @@
       <label for="gender" class="form-label mt-4">성별</label>
         <select class="form-select" id="gender" v-model="gender" required>
           <option value="" disabled selected>성별을 선택해주세요.</option>
-          <option>남</option>
-          <option>여</option>
+          <option>남자</option>
+          <option>여자</option>
         </select>
         <small v-if="condition2[6] == true">성별을 선택해주세요..</small>
     </div>
 
     <div class="form-group row">
       <label for="email" class="form-label mt-4">이메일</label>
-      <input type="text" class="form-control" id="email" placeholder="example@naver.com" v-model="email" required>
+      <input type="text" class="form-control" id="email" placeholder="example@naver.com" v-model="email" required disabled>
       <small v-if="condition[2] == true">이미 사용 중인 이메일입니다..</small>
       <small v-if="condition2[7] == true">올바른 양식을 입력해주세요..</small>
     </div>
@@ -82,9 +79,13 @@
       <small v-if="condition2[8] == true">지역을 선택해주세요..</small>
     </div>
     
-    <div class="d-grid gap-2 mt-5">
-      <button class="btn btn-lg btn-primary" type="submit" style="margin-bottom : 80px">가입하기</button>
-    </div>
+    <div style="padding: 50px 0px 100px 0px;">
+        <div class="three">
+            <router-link to="/findpassword"><button type="button" class="btn btn-primary three-button">회원정보수정</button></router-link>
+            <router-link to="/"><button type="button" class="btn btn-primary three-button">메인페이지로</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary three-button">회원탈퇴</button></router-link>
+        </div>
+      </div>
   </form>
 </div>
 
@@ -95,7 +96,7 @@ import axios from 'axios';
 axios.defaults.baseURL="http://localhost:8079";
 
 export default {
-  name: "SignupPage",
+  name: "MypageInfo",
   data() {
     return {
       condition : [false,false,false],
@@ -237,6 +238,7 @@ export default {
 
   methods : {
     submitForm() {
+      
       axios.post("/member",{
         data : 
           {
@@ -272,7 +274,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .mpdiv {
   margin-bottom: 10px;

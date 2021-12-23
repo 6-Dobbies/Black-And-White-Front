@@ -67,8 +67,8 @@
 </template>
 
 <script>
-import axios from "axios";
-axios.defaults.baseURL = "http://localhost:80";
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:8079";
 
 export default {
   name: "MemberUpdatePage",

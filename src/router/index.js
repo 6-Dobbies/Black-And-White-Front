@@ -59,7 +59,15 @@ const routes = [
   {
     path: '/chessgamepage',
     component: () => import('../views/Chess/Game.vue')
-  },
+  },  
+  {
+    path: '/mypageinfo',
+    component: () => import('../views/Member/Mypage.vue')
+  },  
+  {
+    path: '/postupdatepage',
+    component: () => import('../views/Post/PostUpdate.vue')
+  }
 ]
 
 const router = createRouter({
