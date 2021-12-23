@@ -160,7 +160,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 input select {
   margin: 10px;
   background-color: transparent;

@@ -53,11 +53,6 @@ const routes = [
     component: () => import('../views/Member/Signup.vue')
   },
   {
-    path: '/contactuspage',
-    name: 'Contactus',
-    component: () => import('../views/Member/Contactus.vue')
-  },
-  {
     path: '/memberupdatepage',
     component: () => import('../views/Member/MemberUpdate.vue')
   },

@@ -13,7 +13,7 @@
             <div class="three">
                 <router-link to="/"><button type="button" class="btn btn-primary three-button">수정</button></router-link>
                 <router-link to="/"><button type="button" class="btn btn-primary three-button">삭제</button></router-link>
-                <router-link to="/"><button type="button" class="btn btn-primary three-button">목록</button></router-link>
+                <router-link to="/board"><button type="button" class="btn btn-primary three-button">목록</button></router-link>
             </div>
         </div>
         </form>
@@ -46,7 +46,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .bawtextarea {
     resize: none;
     height: 300px;

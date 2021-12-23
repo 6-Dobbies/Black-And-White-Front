@@ -57,8 +57,8 @@
       <label for="gender" class="form-label mt-4">성별</label>
         <select class="form-select" id="gender" v-model="gender" required>
           <option value="" disabled selected>성별을 선택해주세요.</option>
-          <option>남자</option>
-          <option>여자</option>
+          <option>남</option>
+          <option>여</option>
         </select>
         <small v-if="condition2[6] == true">성별을 선택해주세요..</small>
     </div>
@@ -237,7 +237,6 @@ export default {
 
   methods : {
     submitForm() {
-      
       axios.post("/member",{
         data : 
           {
@@ -273,7 +272,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .mpdiv {
   margin-bottom: 10px;

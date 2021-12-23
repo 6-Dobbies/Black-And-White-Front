@@ -88,7 +88,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .mdinput {
   margin : 10px;
