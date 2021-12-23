@@ -60,7 +60,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .bawtextarea {
     resize: none;
     height: 300px;

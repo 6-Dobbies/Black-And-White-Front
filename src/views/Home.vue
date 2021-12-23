@@ -18,8 +18,5 @@ export default {
   components: {
     HelloWorld, 
   },
-  // created() {
-  //   this.$forceUpdate();
-  // }
 }
 </script>

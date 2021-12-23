@@ -1,82 +1,79 @@
 <template>
     <div class="bawbody">
-        <form class="container h-100">
-        <div class="card border-primary mb-3">
-            <div class="card-body">
-                <input
-                v-model="title"
-                type="text"
-                class="form-control"
-                placeholder="제목을 입력하세요"
-                id="inputDefault">
-                <textarea
-                v-model="content" 
-                type="text" 
-                class="form-control" 
-                placeholder="내용을 입력하세요" 
-                id="exampleTextarea" 
-                rows="10">
-                </textarea>
-            </div>    
-        </div>        
+        <form @submit.prevent="submitForm" class="container h-100">
         <div class="form-group">
-            <label for="formFile" class="col-form-label mt-4">Picture</label>
-            <input class="form-control" type="file" accept="image/jpeg" id="formFile">
+            <label class="col-form-label mt-4" for="title">Title</label>
+            <input class="form-control" v-model="title" placeholder="제목을 입력하세요" id="title">
         </div>
-        <div class="filebox">
-            <input class="upload-name" placeholder="사진 1장을 선택해주세요">
-            <label for="file">Search</label>
-            <input type="file" id="file">
-        </div>        
-
-        <div style="padding-top: 50px;">
-            <div class="three">
-                <router-link to="/"><button type="button" class="btn btn-primary three-button">작성</button></router-link>
-                <router-link to="/"><button type="button" class="btn btn-primary three-button">삭제</button></router-link>
-                <router-link to="/board"><button type="button" class="btn btn-primary three-button">목록</button></router-link>
+        <div class="form-group">
+            <label for="content" class="col-form-label mt-4">Content</label>
+            <textarea class="form-control bawtextarea" v-model="content" placeholder="내용을 입력하세요" id="content"></textarea>
+        </div>
+        <div class="bawtwobutton" style="padding-top: 50px;">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="submit" class="btn btn-secondary" style="width: 100px" @click="submitForm">저장</button>
+                <button type="button" class="btn btn-secondary" style="width: 100px" @click="cancel">취소</button>
             </div>
         </div>
         </form>
     </div>
 </template>
 
-<script> 
-
-import data from '@/data'
+<script>
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:80";
 
 export default {
     name: 'BoardWrite',
     data() {
-        const index = this.$route.params.valueIndex;
         return {
-            data: data,
-            index: index,
-            title: index !== undefined ? data[index].title : "",
-            content: index !== undefined ? data[index].content : ""
+            title : "",
+            content: "",
+            category: "",
+            writer: "",
         }
     },
     methods: {
-        write() {
-            this.data.push({
-                title: this.title,
-                content: this.content,
+        submitForm() {
+            axios.post("/post", {
+                data: {
+                    title : this.title,
+                    content: this.content,
+                    category: "자유",
+                    writer: localStorage.getItem("idx")
+                },
+                "success": true,
+                "code": 0,
+                "message": "성공"
             })
-            this.$router.push({
-                path: '/board'
+            .then(res => {
+                console.log(res.data);
+                alert("글이 저장되었습니다.");
+                this.$router.push('/board');
             })
+            .catch(err => {
+                console.log(err);
+            });
         },
-        modified() {
-            data[this.index].title = this.title
-            data[this.index].content = this.content
-            this.$router.push({
-                path: '/board'
-            })
-        },
-        cancel(){
-            this.$router.push({
-                path: '/board'
-            })
+        cancel() {
+            this.$router.push('/board');
         }
     }
 }
 </script>
+
+<style scoped>
+
+.bawtextarea {
+    resize: none;
+    height: 300px;
+    margin-top: 5px;
+}
+
+.bawtwobutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+</style>

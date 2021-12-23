@@ -4,7 +4,7 @@
     <router-link to="/"><legend>BLACK AND WHITE</legend></router-link>
     <h1 style="text-align: center">로그인</h1>
   </div>
-  <form @submit="submitForm" class="mpcontainer h-100">
+  <form @submit.prevent="submitForm" class="mpcontainer h-100">
     <fieldset>
       <div class="form-group row">
         <label for="memberId" class="form-label mt-4">아이디</label>
@@ -52,7 +52,9 @@ export default {
         { headers: { 'Content-Type': 'application/json' }})
       .then(res => {
         console.log(res.data);
-        localStorage.setItem('token', res.data.data);
+        localStorage.setItem('token', res.data.data.token);
+        localStorage.setItem('idx', res.data.data.memberIdx);
+        localStorage.setItem('ismanager', res.data.data.ismanager);
         this.$router.go();
       })
       .catch(err => {
@@ -63,7 +65,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .mpdiv {
   margin-bottom: 10px;
