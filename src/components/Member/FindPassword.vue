@@ -54,7 +54,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:8079";
+axios.defaults.baseURL="http://localhost:80";
 
 export default {
   name: "FindPassword",
