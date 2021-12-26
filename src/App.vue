@@ -35,7 +35,7 @@
               <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-secondary" v-if="isToken" v-show="isToken == true" @click="[logout(), this.$router.push('/')]">로그아웃</button>
                 <router-link to="/loginpage" v-else><button type="button" class="btn btn-secondary" v-show="isToken == false">로그인</button></router-link>
-                <router-link to="/memberdetail" v-if="isToken"><button type="button" class="btn btn-secondary" v-show="isToken == true">마이페이지</button></router-link>
+                <router-link to="/mypageinfo" v-if="isToken"><button type="button" class="btn btn-secondary" v-show="isToken == true">마이페이지</button></router-link>
                 <router-link to="/signuppage" v-else><button type="button" class="btn btn-secondary" v-show="isToken == false">회원가입</button></router-link>
               </div>
             </div>
@@ -83,6 +83,8 @@ export default {
       localStorage.removeItem("idx");
       localStorage.removeItem("ismanager");
       this.$router.go();
+      this.$router.push('/');
+
     }
     // getData() {
     //   axios.get('/members/all')
