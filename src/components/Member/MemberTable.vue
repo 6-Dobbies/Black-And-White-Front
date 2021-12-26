@@ -27,7 +27,7 @@
                     <td style="max-width:100px;" v-text="member.email"></td>
                     <td style="min-width:50px;" v-text="member.gender"></td>
                     <td style="min-width:70px;" v-text="member.region"></td>
-                    <td style="max-width:100px;" v-text="tier"></td>
+                    <td style="max-width:100px;" v-text="member.tier.win + '승 ' + member.tier.draw + '무 ' + member.tier.loss + '패 (' + member.tier.play + '판)'"></td>
                     <td v-text="member.role[0]"></td>
                     <td style="min-width:50px;" v-text="member.del"></td>
                 </tr>
@@ -82,15 +82,15 @@ export default {
             axios.get('/members/all')
             .then(res => {
                 this.memberlist = res.data.list;
-                console.log(res.data.list);
-                res.data.list.forEach(item => {
-                    axios.get('/members/tier/' + item.memberIdx)
-                    .then(res => {
-                        this.tier = res.data.data;
-                        console.log(res.data.data);
-                    })
-                    .catch(error => console.log(error));
-                })
+                // console.log(res.data.list);
+                // res.data.list.forEach(item => {
+                //     axios.get('/members/tier/' + item.memberIdx)
+                //     .then(res => {
+                //         this.tier = res.data.data;
+                //         console.log(res.data.data);
+                //     })
+                //     .catch(error => console.log(error));
+                // })
                 
             })
             .catch(error => console.log(error));

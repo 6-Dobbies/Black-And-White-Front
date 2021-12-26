@@ -43,6 +43,7 @@
           <option>가장 기억에 남는 장소는 어디인가요?</option>
           <option>가장 감명 깊게 읽은 책은 무엇인가요?</option>
           <option>가장 행복했던 순간은 언제인가요?</option>
+          <option>현재 소속은 어디인가요?</option>
         </select>
       <small v-if="condition2[3] == true">질문을 선택해주세요 :(</small>
     </div>
@@ -74,22 +75,22 @@
       <label for="region" class="form-label mt-4">지역</label>
       <select class="form-select" id="region" v-model="region" required>
         <option value="" disabled selected>지역을 선택해주세요</option>
-        <option value='서울'>서울특별시</option>
-        <option value='부산'>부산광역시</option>
-        <option value='대구'>대구광역시</option>
-        <option value='인천'>인천광역시</option>
-        <option value='광주'>광주광역시</option>
-        <option value='대전'>대전광역시</option>
-        <option value='울산'>울산광역시</option>
-        <option value='경기'>경기도</option>
-        <option value='강원'>강원도</option>
-        <option value='충북'>충청북도</option>
-        <option value='충남'>충청남도</option>
-        <option value='전북'>전라북도</option>
-        <option value='전남'>전라남도</option>
-        <option value='경북'>경상북도</option>
-        <option value='경남'>경상남도</option>
-        <option value='제주'>제주도</option>
+        <option value='강원'>강원</option>
+        <option value='경기'>경기</option>
+        <option value='경남'>경남</option>
+        <option value='경북'>경북</option>
+        <option value='광주'>광주</option>
+        <option value='대구'>대구</option>
+        <option value='대전'>대전</option>
+        <option value='부산'>부산</option>
+        <option value='서울'>서울</option>
+        <option value='울산'>울산</option>
+        <option value='인천'>인천</option>
+        <option value='전남'>전남</option>
+        <option value='전북'>전북</option>
+        <option value='제주'>제주</option>
+        <option value='충남'>충남</option>
+        <option value='충북'>충북</option>
       </select>
       <small v-if="condition2[8] == true">지역을 선택해주세요 :(</small>
     </div>

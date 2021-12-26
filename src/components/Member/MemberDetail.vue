@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <th scope="row">전적</th>
-                <input class="form-control mdinput" id="tier" type="text" :placeholder="member.tier" readonly="">
+                <input class="form-control mdinput" id="tier" type="text" :placeholder="member.tier.win + '승 ' + member.tier.draw + '무 ' + member.tier.loss + '패 (' + member.tier.play + '판)'" readonly="">
             </tr>
             <tr>
                 <th scope="row">권한</th>
@@ -79,6 +79,7 @@ export default {
             axios.patch('/members/' + this.$route.query.memberIdx)
             .then(res => {
                 this.member = res.data.data;
+                this.$router.push('/membertable');
             })
         },
         modify(member) {
@@ -92,11 +93,16 @@ export default {
 
 .mdinput {
   margin : 10px;
+  pointer-events: none;
   /* cursor: not-allowed; */
 }
 
 th {
   padding : 10px;
+}
+
+input::placeholder {
+  color: white;
 }
 
 </style>
