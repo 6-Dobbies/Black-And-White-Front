@@ -237,6 +237,42 @@ export default {
 
   methods : {
     submitForm() {
+
+      if(this.condition[0] || this.condition2[0]) {
+        return false;
+      }
+
+      if(this.condition[1] || this.condition2[1]) {
+        return false;
+      }
+
+      if(this.condition[2] || this.condition2[7]) {
+        return false;
+      }
+
+      if(this.condition2[2]) {
+        return false;
+      }
+
+      if(this.condition2[3]) {
+        return false;
+      }
+
+      if(this.condition2[4]) {
+        return false;
+      }
+
+      if(this.condition2[5]) {
+        return false;
+      }
+
+      if(this.condition2[6]) {
+        return false;
+      }
+      
+      if(this.condition2[8]) {
+        return false;
+      }
       
       axios.post("/member",{
         data : 
