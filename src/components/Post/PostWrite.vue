@@ -1,109 +1,79 @@
 <template>
     <div class="bawbody">
-        <!-- <div class="form-group">
-            <label class="col-form-label mt-4" for="inputDefault">Title</label>
-            <input
-                type="text"
-                class="form-control"
-                placeholder="제목을 입력하세요"
-                id="inputDefault">
+        <form @submit.prevent="submitForm" class="container h-100">
+        <div class="form-group">
+            <label class="col-form-label mt-4" for="title">Title</label>
+            <input class="form-control" v-model="title" placeholder="제목을 입력하세요" id="title">
         </div>
         <div class="form-group">
-            <label for="exampleTextarea" class="col-form-label mt-4">Content</label>
-            <textarea 
-                type="text" 
-                class="form-control" 
-                placeholder="내용을 입력하세요" 
-                id="exampleTextarea" 
-                rows="10">
-            </textarea>
+            <label for="content" class="col-form-label mt-4">Content</label>
+            <textarea class="form-control bawtextarea" v-model="content" placeholder="내용을 입력하세요" id="content"></textarea>
         </div>
-        <div class="form-group">
-            <label for="formFile" class="col-form-label mt-4">Picture</label>
-            <input class="form-control" type="file" accept="image/jpeg" id="formFile">
+        <div class="bawtwobutton" style="padding-top: 50px;">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="submit" class="btn btn-secondary" style="width: 100px" @click="submitForm">저장</button>
+                <button type="button" class="btn btn-secondary" style="width: 100px" @click="cancel">취소</button>
+            </div>
         </div>
-        <div class="filebox">
-            <input class="upload-name" placeholder="사진 1장을 선택해주세요">
-            <label for="file">Search</label>
-            <input type="file" id="file">
-        </div>
-        <br><br>
-        <button type="submit" class="btn btn-secondary">Submit</button> -->
-
-        <div class="form-group">
-            <label class="col-form-label mt-4" for="inputDefault">Title</label>
-            <input
-                v-model="title"
-                type="text"
-                class="form-control"
-                placeholder="제목을 입력하세요"
-                id="inputDefault">
-        </div>
-        <div class="form-group">
-            <label for="exampleTextarea" class="col-form-label mt-4">Content</label>
-            <textarea
-                v-model="content" 
-                type="text" 
-                class="form-control" 
-                placeholder="내용을 입력하세요" 
-                id="exampleTextarea" 
-                rows="10">
-            </textarea>
-        </div>
-        <div class="form-group">
-            <label for="formFile" class="col-form-label mt-4">Picture</label>
-            <input class="form-control" type="file" accept="image/jpeg" id="formFile">
-        </div>
-        <div class="filebox">
-            <input class="upload-name" placeholder="사진 1장을 선택해주세요">
-            <label for="file">Search</label>
-            <input type="file" id="file">
-        </div>
-        <br><br>
-        <div class="btn-group" role="group" aria-label="Basic example">
-        <button @click="index !== undefined ? modified() : write()" class="btn btn-secondary">{{index !== undefined ? '수정' : '작성'}}</button>
-        <button @click="cancel" class="btn btn-secondary">취소</button>
-        </div>
+        </form>
     </div>
 </template>
 
-<script> 
-
-import data from '@/data'
+<script>
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:80";
 
 export default {
     name: 'BoardWrite',
     data() {
-        const index = this.$route.params.valueIndex;
         return {
-            data: data,
-            index: index,
-            title: index !== undefined ? data[index].title : "",
-            content: index !== undefined ? data[index].content : ""
+            title : "",
+            content: "",
+            category: "",
+            writer: "",
         }
     },
     methods: {
-        write() {
-            this.data.push({
-                title: this.title,
-                content: this.content,
+        submitForm() {
+            axios.post("/post", {
+                data: {
+                    title : this.title,
+                    content: this.content,
+                    category: "자유",
+                    writer: localStorage.getItem("idx")
+                },
+                "success": true,
+                "code": 0,
+                "message": "성공"
             })
-            this.$router.push({
-                path: '/board'
+            .then(res => {
+                console.log(res.data);
+                alert("글이 저장되었습니다.");
+                this.$router.push('/board');
             })
+            .catch(err => {
+                console.log(err);
+            });
         },
-        modified() {
-            data[this.index].title = this.title
-            data[this.index].content = this.content
-            this.$router.push({
-                path: '/board'
-            })
-        },
-        cancel(){
-            this.$router.push({
-                path: '/board'
-            })
+        cancel() {
+            this.$router.push('/board');
         }
     }
 }
 </script>
+
+<style scoped>
+
+.bawtextarea {
+    resize: none;
+    height: 300px;
+    margin-top: 5px;
+}
+
+.bawtwobutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+</style>

@@ -2,10 +2,6 @@
     <div class="bawbody">
         <table class="bawtable" v-if="member.memberIdx">
             <tr>
-                <th scope="row">번호</th>
-                <input class="form-control mdinput" id="memberIdx" type="text" :placeholder="member.memberIdx" readonly="">
-            </tr>
-            <tr>
                 <th scope="row">아이디</th>
                 <input class="form-control mdinput" id="memberId" type="text" :placeholder="member.memberId" readonly="">
             </tr>
@@ -33,19 +29,11 @@
                 <th scope="row">전적</th>
                 <input class="form-control mdinput" id="tier" type="text" :placeholder="member.tier.win + '승 ' + member.tier.draw + '무 ' + member.tier.loss + '패 (' + member.tier.play + '판)'" readonly="">
             </tr>
-            <tr>
-                <th scope="row">권한</th>
-                <input class="form-control mdinput" id="role" type="text" :placeholder="member.role[0]" readonly="">
-            </tr>
-            <tr>
-                <th scope="row">탈퇴</th>
-                <input class="form-control mdinput" id="del" type="text" :placeholder="member.del" readonly="">
-            </tr>
         </table>
         <br><br>
         <div class="btn-group" role="group" aria-label="Basic example">
         <button class="btn btn-secondary" @click="modify(member)">수정</button>
-        <button @click="deleted" class="btn btn-secondary">삭제</button>
+        <button @click="deleted" class="btn btn-secondary">탈퇴</button>
         <router-link to="/membertable"><button @click="list" class="btn btn-secondary">목록</button></router-link>
         </div>
     </div>
@@ -67,7 +55,7 @@ export default {
     },
     methods: {
         getData() {
-            axios.get('/members/idx/' + this.$route.query.memberIdx)
+            axios.get('/members/idx/' + localStorage.getItem("idx"))
             .then(res => {
                 this.member = res.data.data;
                 console.log(res.data);
@@ -76,11 +64,13 @@ export default {
             .catch(error => console.log(error));
         },
         deleted() {
-            axios.patch('/members/' + this.$route.query.memberIdx)
+          if(alert("정말 탈퇴하시겠습니까?")) {
+            axios.patch('/members/' + localStorage.getItem("idx"))
             .then(res => {
                 this.member = res.data.data;
-                this.$router.push('/membertable');
             })
+            .catch(error => console.log(error));
+          }
         },
         modify(member) {
           this.$router.push({path : '/memberupdatepage', query : {memberIdx : member.memberIdx}});

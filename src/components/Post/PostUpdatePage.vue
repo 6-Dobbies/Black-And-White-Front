@@ -4,14 +4,14 @@
         <div class="card border-primary mb-3">
             <div class="card-header">자유게시판</div>
             <div class="card-body">
-                <input class="form-control" v-model="post.title" disabled>
-                <textarea class="form-control bawtextarea" v-model="post.content" disabled></textarea>
+                <input class="form-control" v-model="post.title">
+                <textarea class="form-control bawtextarea" v-model="post.content"></textarea>
             </div>
         </div>
 
         <div style="padding-top: 50px;">
             <div class="three">
-                <router-link to="/postupdatepage"><button type="button" class="btn btn-primary three-button">수정</button></router-link>
+                <router-link to="/"><button type="button" class="btn btn-primary three-button">수정</button></router-link>
                 <router-link to="/"><button type="button" class="btn btn-primary three-button">삭제</button></router-link>
                 <router-link to="/board"><button type="button" class="btn btn-primary three-button">목록</button></router-link>
             </div>
@@ -25,7 +25,7 @@ import axios from 'axios';
 axios.defaults.baseURL="http://localhost:80";
 
 export default {
-    name: 'PostDetail',
+    name: 'PostUpdatePage',
     data() {        
         return {
             post: "",                
@@ -60,8 +60,7 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
 .bawtextarea {
     resize: none;
     height: 300px;

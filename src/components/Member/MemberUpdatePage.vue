@@ -3,58 +3,58 @@
     <div class="bawbody">
       <table class="bawtable" v-if="member.memberIdx">
         <tr>
-          <th scope="row">번호</th>
-          <input class="form-control" id="memberIdx" type="text" :placeholder="member.memberIdx" style="background: transparent" readonly=""/>
-        </tr>
-        <tr>
           <th scope="row">아이디</th>
-          <input class="form-control" id="memberId" type="text" :placeholder="member.memberId" style="background: transparent" readonly=""/>
+          <input class="form-control noclick" id="memberId" type="text" :placeholder="member.memberId" style="background: transparent" readonly="">
         </tr>
         <tr>
           <th scope="row">비밀번호</th>
-          <input class="form-control" id="pw" type="password" placeholder="변경할 비밀번호를 입력해주세요." v-model="pw" required/>
-          <small v-if="condition2[2] == true">비밀번호를 입력해주세요..</small>
+          <input class="form-control" id="pw" type="password" placeholder="새 비밀번호를 입력하세요" v-model="pw" required/>
+          <small v-if="condition2[2] == true">비밀번호를 입력해주세요 :(</small>
         </tr>
         <tr>
           <th scope="row">닉네임</th>
-          <input class="form-control" id="nickname" type="text" :placeholder="member.nickname" style="background: transparent" readonly=""/>
+          <input class="form-control noclick" id="nickname" type="text" :placeholder="member.nickname" style="background: transparent" readonly="">
         </tr>
         <tr>
           <th scope="row">이메일</th>
-          <input class="form-control" id="email" type="text" :placeholder="member.email" v-model="email" required/>
-          <small v-if="condition == true">이미 사용 중인 이메일입니다..</small>
-          <small v-if="condition2[0] == true">올바른 양식을 입력해주세요..</small>
+          <input class="form-control" id="email" type="text" :placeholder="member.email" v-model="email" required>
+          <small v-if="condition == true">이미 사용 중인 이메일입니다 :(</small>
+          <small v-if="condition2[0] == true">올바른 양식을 입력해주세요 :(</small>
         </tr>
         <tr>
           <th scope="row">출생연도</th>
-          <input class="form-control" id="birthYear" type="text" :placeholder="member.birthYear" style="background: transparent"/>
+          <input class="form-control noclick" id="birthYear" type="text" :placeholder="member.birthYear" style="background: transparent" readonly="">
         </tr>
         <tr>
           <th scope="row">성별</th>
-          <input class="form-control" id="gender" type="text" :placeholder="member.gender" style="background: transparent"/>
+          <input class="form-control noclick" id="gender" type="text" :placeholder="member.gender" style="background: transparent" readonly="">
         </tr>
         <tr>
           <th scope="row">지역</th>
-          <select class="form-select" id="region" v-model="region" style="margin-left: 10px" required>
-            <option value="" selected>지역을 선택해주세요.</option>
-            <option>서울특별시</option>
-            <option>부산광역시</option>
-            <option>인천광역시</option>
-            <option>경기도</option>
+          <select class="form-select" id="region" v-model="region" required>
+            <option value="" selected>지역을 선택해주세요</option>
+            <option value='강원'>강원</option>
+            <option value='경기'>경기</option>
+            <option value='경남'>경남</option>
+            <option value='경북'>경북</option>
+            <option value='광주'>광주</option>
+            <option value='대구'>대구</option>
+            <option value='대전'>대전</option>
+            <option value='부산'>부산</option>
+            <option value='서울'>서울</option>
+            <option value='울산'>울산</option>
+            <option value='인천'>인천</option>
+            <option value='전남'>전남</option>
+            <option value='전북'>전북</option>
+            <option value='제주'>제주</option>
+            <option value='충남'>충남</option>
+            <option value='충북'>충북</option>
           </select>
-          <small v-if="condition2[1] == true">지역을 선택해주세요..</small>
+          <small v-if="condition2[1] == true">지역을 선택해주세요 :(</small>
         </tr>
         <tr>
           <th scope="row">전적</th>
-          <input class="form-control" id="tier" type="text" :placeholder="member.tier" style="background: transparent"/>
-        </tr>
-        <tr>
-          <th scope="row">권한</th>
-          <input class="form-control" id="role" type="text" :placeholder="member.role[0]" style="background: transparent"/>
-        </tr>
-        <tr>
-          <th scope="row">탈퇴</th>
-          <input class="form-control" id="del" type="text" :placeholder="member.del" style="background: transparent"/>
+          <input class="form-control noclick" id="tier" type="text" :placeholder="member.tier.win + '승 ' + member.tier.draw + '무 ' + member.tier.loss + '패 (' + member.tier.play + '판)'" style="background: transparent"  readonly="">
         </tr>
       </table>
       <br /><br />
@@ -67,8 +67,8 @@
 </template>
 
 <script>
-import axios from "axios";
-axios.defaults.baseURL = "http://localhost:80";
+import axios from 'axios';
+axios.defaults.baseURL="http://localhost:80";
 
 export default {
   name: "MemberUpdatePage",
@@ -160,7 +160,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 input select {
   margin: 10px;
   background-color: transparent;
@@ -177,6 +177,11 @@ small {
 
 select option[value=""] [selected] {
   display: none;
+}
+
+.noclick {
+  pointer-events: none;
+  margin-left: -10px;
 }
 
 /* td { 

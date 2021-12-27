@@ -4,7 +4,7 @@
     <router-link to="/"><legend>BLACK AND WHITE</legend></router-link>
     <h1 style="text-align: center">로그인</h1>
   </div>
-  <form @submit="submitForm" class="mpcontainer h-100">
+  <form @submit.prevent="submitForm" class="mpcontainer h-100">
     <fieldset>
       <div class="form-group row">
         <label for="memberId" class="form-label mt-4">아이디</label>
@@ -20,17 +20,11 @@
         <button class="btn btn-lg btn-primary" @click="[submitForm(), this.$router.replace('/')]">로그인</button>
       </div>
 
-      <div class="container px-4" style="padding-top: 50px;">
-        <div class="row justify-content-center row gx-4">
-          <div class="col-4">
-            <router-link to="/findpassword"><button type="button" class="btn btn-primary">비밀번호 찾기</button></router-link>
-          </div>
-          <div class="col-4">
-            <router-link to="/findid"><button type="button" class="btn btn-primary" style="padding: 6px 21px">아이디 찾기</button></router-link>
-          </div>
-          <div class="col-4">
-            <router-link to="/signuppage"><button type="button" class="btn btn-primary" style="padding: 6px 30px">회원가입</button></router-link>
-          </div>
+      <div style="padding-top: 50px;">
+        <div class="three">
+            <router-link to="/findpassword"><button type="button" class="btn btn-primary three-button">비밀번호 찾기</button></router-link>
+            <router-link to="/findid"><button type="button" class="btn btn-primary three-button">아이디 찾기</button></router-link>
+            <router-link to="/signuppage"><button type="button" class="btn btn-primary three-button">회원가입</button></router-link>
         </div>
       </div>
     </fieldset>
@@ -54,11 +48,13 @@ export default {
   },
   methods : {
     submitForm() {
-      axios.post("/members/login", JSON.stringify(this.form),
+      axios.post('/members/login', JSON.stringify(this.form),
         { headers: { 'Content-Type': 'application/json' }})
       .then(res => {
         console.log(res.data);
-        localStorage.setItem("token", res.data.data);
+        localStorage.setItem('token', res.data.data.token);
+        localStorage.setItem('idx', res.data.data.memberIdx);
+        localStorage.setItem('ismanager', res.data.data.ismanager);
         this.$router.go();
       })
       .catch(err => {
@@ -69,7 +65,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .mpdiv {
   margin-bottom: 10px;
@@ -91,6 +87,15 @@ legend {
 
 label {
   padding-top: 10px;
+}
+
+.three {
+  display: flex;
+  justify-content: space-between;
+}
+
+.three-button {
+  width: 135px;
 }
 
 </style>

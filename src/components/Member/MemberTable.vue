@@ -19,7 +19,7 @@
                 <tr class="table-dark" v-if="memberlist.length == 0">
                     <td colspan="10" style="text-align: center">회원이 없습니다.</td>
                 </tr>
-                <tr class="table-dark" v-for="member in memberlist" v-bind:key="member.memberIdx" @click="detail(member)">                    
+                <tr class="table-dark" v-for="member in memberlist" v-bind:key="member.memberIdx" @click="detail(member)" style="cursor:pointer;">                    
                     <td style="min-width:50px;" v-text="member.memberIdx"></td>
                     <td style="min-width:70px;" v-text="member.memberId"></td>
                     <td v-text="member.nickname"></td>
@@ -27,7 +27,7 @@
                     <td style="max-width:100px;" v-text="member.email"></td>
                     <td style="min-width:50px;" v-text="member.gender"></td>
                     <td style="min-width:70px;" v-text="member.region"></td>
-                    <td style="max-width:100px;" v-text="member.tier"></td>
+                    <td style="max-width:100px;" v-text="member.tier.win + '승 ' + member.tier.draw + '무 ' + member.tier.loss + '패 (' + member.tier.play + '판)'"></td>
                     <td v-text="member.role[0]"></td>
                     <td style="min-width:50px;" v-text="member.del"></td>
                 </tr>
@@ -71,6 +71,7 @@ export default {
     data() {
         return{
             memberlist: [],
+            tier: ""
         }
     },
     created() {
@@ -80,9 +81,17 @@ export default {
         getData() {
             axios.get('/members/all')
             .then(res => {
-                // res.data.list.forEach(item => console.log(item));
-                console.log(res.data.list);
                 this.memberlist = res.data.list;
+                // console.log(res.data.list);
+                // res.data.list.forEach(item => {
+                //     axios.get('/members/tier/' + item.memberIdx)
+                //     .then(res => {
+                //         this.tier = res.data.data;
+                //         console.log(res.data.data);
+                //     })
+                //     .catch(error => console.log(error));
+                // })
+                
             })
             .catch(error => console.log(error));
         },
@@ -93,13 +102,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 td {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
-    /* min-width: 60px; */
 }
 
 th {

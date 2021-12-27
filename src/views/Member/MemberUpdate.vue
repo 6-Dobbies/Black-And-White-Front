@@ -1,6 +1,6 @@
 <template>
   <div class="bawhead">
-    <router-link to="/"><h1>마이 페이지</h1></router-link>
+    <router-link to="/"><h1>정보 수정</h1></router-link>
   </div>
   <MemberUpdatePage />
 </template>
@@ -15,7 +15,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

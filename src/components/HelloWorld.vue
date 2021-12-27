@@ -16,16 +16,14 @@
       <h1>About</h1>
       <ul>
         <li><a href="https://github.com/6-Dobbies" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://bit.ly/3pK8ehP" target="_blank" rel="noopener">Notion</a></li>
-        <!-- <li><a href="" target="_blank" rel="noopener">Contact Us</a></li> -->
-        <router-link to="/contactuspage"><li><u>Contact Us</u></li></router-link>
+        <li><a href="https://bit.ly/3egfDju" target="_blank" rel="noopener">Notion</a></li>
       </ul>
       <br><br>
       <h1>뭘 더 넣지...??</h1>
       <ul>
-        <li><a href="" target="_blank" rel="noopener">●●●</a></li>
-        <li><a href="" target="_blank" rel="noopener">■■■</a></li>
-        <li><a href="" target="_blank" rel="noopener">▲▲▲</a></li>
+        <li><a href="" target="_blank" rel="noopener">●■▲</a></li>
+        <li><a href="" target="_blank" rel="noopener">●■▲</a></li>
+        <li><a href="" target="_blank" rel="noopener">●■▲</a></li>
       </ul>
   </div>
 </template>

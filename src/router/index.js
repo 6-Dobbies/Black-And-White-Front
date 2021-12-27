@@ -53,23 +53,33 @@ const routes = [
     component: () => import('../views/Member/Signup.vue')
   },
   {
-    path: '/contactuspage',
-    name: 'Contactus',
-    component: () => import('../views/Member/Contactus.vue')
-  },
-  {
     path: '/memberupdatepage',
     component: () => import('../views/Member/MemberUpdate.vue')
   },
   {
     path: '/chessgamepage',
     component: () => import('../views/Chess/Game.vue')
-  },
+  },  
+  {
+    path: '/mypageinfo',
+    component: () => import('../views/Member/Mypage.vue')
+  },  
+  {
+    path: '/postupdatepage',
+    component: () => import('../views/Post/PostUpdate.vue')
+  }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  }
 })
 
 export default router

@@ -15,9 +15,3 @@ export default {
   }
 }
 </script>
-
-<style>
-h1 {
-  text-decoration: none;
-}
-</style>

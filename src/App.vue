@@ -12,15 +12,11 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
-                <router-link to="/" style="text-decoration: none;">
-                  <li class="nav-item"><a class="nav-link active">Home<span class="visually-hidden">(current)</span></a></li>
-                </router-link>
-
                 <li class="nav-item dropdown">
                 <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Board</a>
                 <div class="dropdown-menu">
                   <router-link to="/board" style="text-decoration: none;"><a class="dropdown-item">자유 게시판</a></router-link>
-                  <router-link to="/board" style="text-decoration: none;"><a class="dropdown-item">공략 게시판</a></router-link>
+                  <!-- <router-link to="/board" style="text-decoration: none;"><a class="dropdown-item">공략 게시판</a></router-link> -->
                 </div>
                 </li>
                 
@@ -28,18 +24,19 @@
                 <a class="nav-link  active dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game</a>
                 <div class="dropdown-menu">
                   <router-link to="/chessgamepage" style="text-decoration: none;"><a class="dropdown-item">♟ Chess</a></router-link>
-                  <a class="dropdown-item">🃏 Card</a>
+                  <!-- <a class="dropdown-item">🃏 Card</a> -->
                 </div>
                 </li>
 
-                <router-link to="/membertable" style="text-decoration: none;">
+                <router-link to="/membertable" style="text-decoration: none;" v-if="isManager" v-show="isManager == true">
                   <li class="nav-item"><a class="nav-link active">MemberAll</a></li>
                 </router-link>
             </ul>
               <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-secondary" v-if="isToken" v-show="isToken == true" @click="[logout(), this.$router.push('/')]">로그아웃</button>
                 <router-link to="/loginpage" v-else><button type="button" class="btn btn-secondary" v-show="isToken == false">로그인</button></router-link>
-                <router-link to="/signuppage"><button type="button" class="btn btn-secondary">회원가입</button></router-link>
+                <router-link to="/mypageinfo" v-if="isToken"><button type="button" class="btn btn-secondary" v-show="isToken == true">마이페이지</button></router-link>
+                <router-link to="/signuppage" v-else><button type="button" class="btn btn-secondary" v-show="isToken == false">회원가입</button></router-link>
               </div>
             </div>
             </div>
@@ -64,10 +61,30 @@ export default {
   components: {
     BAWFooter
   },
+  computed : {
+		isToken() {
+      if(localStorage.getItem("token")) {
+        return true;
+      }else {
+        return false;
+      }
+		},
+    isManager() {
+      if(localStorage.getItem("ismanager") === "true") {
+        return true;
+      }else {
+        return false;
+      }
+    },
+  },
   methods: {
     logout() {
-        localStorage.removeItem("token");
-        this.$router.go();
+      localStorage.removeItem("token");
+      localStorage.removeItem("idx");
+      localStorage.removeItem("ismanager");
+      this.$router.go();
+      this.$router.push('/');
+
     }
     // getData() {
     //   axios.get('/members/all')
@@ -88,23 +105,17 @@ export default {
     //   .catch(error => console.log(error))
     // },
   },
-  computed : {
-		isToken() {
-      if(localStorage.getItem("token")) {
-        return true;
-      }else {
-        return false;
-      }
-		}
-	}
 };
 </script>
 
 <style>
+
 #app {
   min-height: 100%;
   position: relative;
   background-color: #1a0933;
   padding-bottom: 200px;
+  text-decoration: none;
 }
+
 </style>
