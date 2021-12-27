@@ -2,7 +2,7 @@
 <template>
   <div class="bawbody">
   
-    <div id="myBoard" class="small-board" style="width: 40%; margin-top: 100px"></div>
+    <div id="myBoard" class="small-board" style="width: 40%; margin-top: 60px"></div>
     
     <fieldset class="form-group">
       <div class="form-group row" style="margin-top : 20px">
