@@ -66,7 +66,7 @@
                                         <a href="#" class="text-muted"><span class="badge bg-orange">MySQL</span></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-muted"><span class="badge bg-light">Google Cloud</span></a>
+                                        <a href="#" class="text-muted"><span class="badge bg-orange">AWS</span></a>
                                     </li>
                                 </ul>
                             </div>
