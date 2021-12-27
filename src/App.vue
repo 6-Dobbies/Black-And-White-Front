@@ -54,7 +54,7 @@
 <script>
 import BAWFooter from './components/common/BAWFooter.vue';
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://ec2-13-125-131-254.ap-northeast-2.compute.amazonaws.com";
 
 export default {
   name: "App",

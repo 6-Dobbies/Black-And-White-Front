@@ -11,7 +11,7 @@
         </div>
         <div class="bawtwobutton" style="padding-top: 50px;">
             <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="submit" class="btn btn-secondary" style="width: 100px" @click="submitForm">저장</button>
+                <button type="submit" class="btn btn-secondary" style="width: 100px">저장</button>
                 <button type="button" class="btn btn-secondary" style="width: 100px" @click="cancel">취소</button>
             </div>
         </div>
@@ -21,7 +21,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:80";
+axios.defaults.baseURL="http://ec2-13-125-131-254.ap-northeast-2.compute.amazonaws.com";
 
 export default {
     name: 'BoardWrite',
@@ -34,7 +34,18 @@ export default {
         }
     },
     methods: {
+        doubleSubmitCheck(){
+            var doubleSubmitFlag = false;
+            if(doubleSubmitFlag){
+                return doubleSubmitFlag;
+            }else{
+                doubleSubmitFlag = true;
+                return false;
+            }
+        },
+
         submitForm() {
+            this.doubleSubmitCheck();
             axios.post("/post", {
                 data: {
                     title : this.title,
@@ -60,6 +71,7 @@ export default {
         }
     }
 }
+
 </script>
 
 <style scoped>

@@ -2,7 +2,7 @@
   "name": "vuetest3",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:80",
+  "proxy": "http://ec2-13-125-131-254.ap-northeast-2.compute.amazonaws.com",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
