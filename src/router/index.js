@@ -1,8 +1,7 @@
 // import { createRouter, createWebHashHistory } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import PostDetail from '@/components/Post/PostDetail'
-import PostWrite from '@/components/Post/PostWrite'
+
 const routes = [
   {
     path: '/',
@@ -17,21 +16,13 @@ const routes = [
     component: () => import('../views/Board/Board.vue')
   },
   {
-    path: '/boardwrite',
+    path: '/postwrite',
     component: () => import('../views/Post/PostWriter.vue')
   },
   {
     path: '/postdetail',
     component: () => import('../views/Post/BoardClick.vue')
-  },
-  {
-    path: '/boardwrite/:valueIndex',
-    component: PostWrite
-  },
-  {
-    path: '/postdetail/:valueIndex',
-    component: PostDetail
-  },
+  }, 
   {
     path: '/membertable',
     component: () => import('../views/Member/Member.vue')
